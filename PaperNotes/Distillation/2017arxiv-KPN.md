@@ -1,10 +1,10 @@
 # Knowledge Projection for Effective Design of Thinner and Faster Deep Neural Networks
 
-[arXiv1710](https://arxiv.org/abs/1710.09505)
+[arXiv1710](https://arxiv.org/abs/1710.09505)	**no code** 	**CIFAR10 VOC2007** **Ommniglot**
 
 **“如何联合解决网络压缩、加速和域自适应问题成为一个非常重要的研究问题”**
 
-本文提出一种知识投影网络(KPN)，在预训练的大型教师网络的指导下，采用两阶段联合优化的方法来训练小型网络
+本文提出一种知识投影网络(KPN)，在预训练的大型教师网络的指导下，采用两阶段联合优化的方法来训练小型网络,第一阶段通过任务损失优化投射层和学生网络的下半部分，通过定义的投射损失和投射层输出优化上半部分；第二阶段将第一阶段的结果作为初始化，利用提出了联合损失进行进一步优化达到学生网络内部到最终输出的平稳输出
 
 ![image-20240306092624160](./imgs/image-20240306092624160.png)
 

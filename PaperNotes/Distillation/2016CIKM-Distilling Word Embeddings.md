@@ -1,6 +1,6 @@
 # Distilling Word Embeddings: An Encoding Approach
 
-[2016CIKM CCF-B](https://dl.acm.org/doi/abs/10.1145/2983323.2983888)	**no code**
+[2016CIKM CCF-B](https://dl.acm.org/doi/abs/10.1145/2983323.2983888)	**no code**	NLP
 
 **本文提出一个词嵌入的蒸馏，证明了小型嵌入会丢失句法的某些信息而使用蒸馏嵌入则会保留下来这部分信息，思想比较简单最后的可行性分析值得思考与借鉴。**
 

@@ -2,7 +2,7 @@
 
 [ECCV2018](https://openaccess.thecvf.com/content_ECCV_2018/html/Yi_Wei_Quantization_Mimic_Towards_ECCV_2018_paper.html)	**no code**
 
-
+将量化方法和蒸馏方法相结合提出了一种新的量化蒸馏框架，训练一个全精度教师网络，将其压缩为量化网络，提出一种模仿损失，让学生网络量化后的特征图模拟教师网络量化后的特征图
 
 ## Introduction
 

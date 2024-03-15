@@ -1,10 +1,12 @@
 # Moonshine: Distilling with Cheap Convolutions
 
-[NeurIPS2018](https://proceedings.neurips.cc/paper_files/paper/2018/hash/49b8b4f95f02e055801da3b4f58e28b7-Abstract.html)  **[code in github](https://github.com/BayesWatch/pytorch-moonshine/tree/master)**
+[NeurIPS2018](https://proceedings.neurips.cc/paper_files/paper/2018/hash/49b8b4f95f02e055801da3b4f58e28b7-Abstract.html)  **[code in github](https://github.com/BayesWatch/pytorch-moonshine/tree/master)** **CIFAR10 CIFAR100**
 
-**本文没有使网络变得更薄更浅，采用此类网络所使用的标准卷积块，并将其为替换为更便宜的卷积快，保持原始架构不变。**
+**本文没有使网络变得更薄更浅，采用此类网络所使用的标准卷积块，并将其为替换为更便宜的卷积块，保持原始架构不变。**
 
+分组卷积G(g)：将卷积分成g组，若$N_{in}=N_{out}=N$，则卷积消耗从$N^2k^2$降低到$(\frac{N}{g})^2k^2$，降低了g倍
 
+瓶颈块B(b)：首先将输入通道数降低b倍进行卷积，在最后一个过程恢复到所需要的$N_{out}$
 
 ## Introduction
 
@@ -42,7 +44,7 @@ ${N_{A_i}}$为第i层的通道数。
 
 ![image-20240307204738779](./imgs/image-20240307204738779.png)
 
-**将卷积分成g组，若$N_{in}=N_{out}=N$，则卷积消耗从$N^2k^2$降低到$(\frac{N}{g})^2k^2$，降低了g倍，成为G(g)**
+**将卷积分成g组，若$N_{in}=N_{out}=N$，则卷积消耗从$N^2k^2$降低到$(\frac{N}{g})^2k^2$，降低了g倍，称为G(g)**
 
 **引入瓶颈块，记为B(b)，首先将输入通道数降低b倍进行卷积，在最后一个过程恢复到所需要的$N_{out}$**
 

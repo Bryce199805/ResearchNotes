@@ -4,7 +4,7 @@
 
 与***ICCV2019 Be Your Own Teacher: Improve the Performance of Convolutional Neural Networks via Self Distillation***非常相似
 
-
+唯一的区别在于本文认为对于特征层的模仿学习在后期大的权重参数会影响网络的性能，因此引入余弦退火来削弱后期特征损失的权重值
 
 ## Introduction
 

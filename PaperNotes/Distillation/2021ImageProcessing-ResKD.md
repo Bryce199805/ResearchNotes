@@ -2,7 +2,7 @@
 
 [IEEE Transactions on Image Processing 2021](https://ieeexplore.ieee.org/abstract/document/9382121) 	**no code**
 
-
+这项工作利用了ResNet的思想，认为师生模型之间的差距可以被视为知识来指导模型的学习，提出了一种残差引导的学习方法，使用一系列的残差学生模型来弥合师生模型之间的差距，残差学生模型由NAS搜索得到合适的结构，并且提出了一种能量熵来衡量模型之间的差异用于停止训练，最后在推理阶段提出一个自适应推理，根据不同难易程度的样本集成适量的残差学生网络来进行更快的推理。
 
 ## Introduction
 

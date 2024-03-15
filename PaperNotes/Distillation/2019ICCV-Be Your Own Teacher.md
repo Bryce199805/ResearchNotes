@@ -2,6 +2,8 @@
 
 [ICCV2019](https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Be_Your_Own_Teacher_Improve_the_Performance_of_Convolutional_Neural_ICCV_2019_paper.html)	[Code in github](https://github.com/ArchipLab-LinfengZhang/pytorch-self-distillation-final)
 
+提出了一种自蒸馏的方法，将网络分为多个部分，每个部分都可以进行独立的输出，引入了三种损失：交叉熵损失，用真实标签指导每一个子网学习数据集中的知识；KL损失，让每个子网的softmax输出模仿最深层网络的输出;Hint损失，最小化每个子网与最深分类器的特征图的距离。用改损失来指导网络模型的优化。
+
 ![image-20240304110035796](./imgs/image-20240304110035796.png)
 
 为了提高学生模型的性能，在训练过程中引入三种损失：

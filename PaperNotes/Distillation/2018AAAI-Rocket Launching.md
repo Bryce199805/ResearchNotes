@@ -1,10 +1,10 @@
 # Rocket Launching: A Universal and Efficient Framework for Training Well-performing Light Net
 
-[2018AAAI](https://ojs.aaai.org/index.php/AAAI/article/view/11601) 	[**code in github**](https://github.com/zhougr1993/Rocket-Launching)
+[2018AAAI](https://ojs.aaai.org/index.php/AAAI/article/view/11601) 	[**code in github**](https://github.com/zhougr1993/Rocket-Launching)	**CIFAR10 CIFAR100**
 
  **为了在有限时间下获得性能更好的神经网络，提出一个通用框架，利用一个加速网络来帮助轻量级网络的训练和预测**
 
-
+提出了一种称为火箭的训练框架，包括加速网络（教师网络）和轻量级网络（学生模型），两者共享低级别层的参数，且各自都有特定曾用于任务的学习和预测，并提出梯度阻断方案来完善两个网络的优化过程
 
 ## Introduction 
 

@@ -1,5 +1,5 @@
 # Deep Model Compression: Distilling Knowledge from Noisy Teachers
-[2016arXiv](https://arxiv.org/abs/1610.09650)   no code
+[2016arXiv](https://arxiv.org/abs/1610.09650)   no code	test on MNIST SVHN CIFAR10
 
 **通过对教师输出的Logit添加噪声来模拟同一专业的不同教师，并且添加噪声相当于正则化项的作用**
 

@@ -1,8 +1,8 @@
 # Deep Mutual Learning 
 
-[CVPR2018](https://openaccess.thecvf.com/content_cvpr_2018/html/Zhang_Deep_Mutual_Learning_CVPR_2018_paper.html)
+[CVPR2018](https://openaccess.thecvf.com/content_cvpr_2018/html/Zhang_Deep_Mutual_Learning_CVPR_2018_paper.html) 	no code
 
-提出了互学习的概念，两个或多个学生模型之间互相学习。 **具有高熵的后验能够训练出更鲁棒的模型结构。**
+提出了互学习的概念，两个或多个学生模型之间互相学习。 并且通过多模型的互学习优化时的不同集成策略证明了**具有高熵的后验能够训练出更鲁棒的模型结构。**
 
 ![image-20240304165400618](./imgs/image-20240304165400618.png)
 
