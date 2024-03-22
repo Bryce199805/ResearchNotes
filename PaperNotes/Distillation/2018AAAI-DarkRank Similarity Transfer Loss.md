@@ -1,6 +1,6 @@
 # DarkRank: Accelerating Deep Metric Learning via Cross Sample Similarities Transfer
 
-AAAI 2018	
+**AAAI 2018**	
 
 先前方法都仅考虑单样本的知识，都没有考虑不同样本之间的关系，这项工作引入知识转移的交叉样本相似性，提出了一套对样本进行相似度打分的分数损失，利用样本间的知识对学生模型进行训练。
 

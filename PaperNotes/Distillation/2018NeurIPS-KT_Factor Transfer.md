@@ -1,8 +1,6 @@
-w# Paraphrasing Complex Network: Network Compression via Factor Transfer
+# Paraphrasing Complex Network: Network Compression via Factor Transfer
 
 **[NeurIPS 2018](https://proceedings.neurips.cc/paper_files/paper/2018/hash/6d9cb7de5e8ac30bd5e8734bc96a35c1-Abstract.html)	[code in github](https://github.com/Jangho-Kim/Factor-Transfer-pytorch)	CIFAR10/100  ImageNet  ObjectDetection**
-
-
 
 这项工作认为先前方法都忽略了师生模型之间的内在差异，简单的提供教师知识而没有任何解释，不利于学生模型的理解，因此提出了因子转移的方法，在教师网络上添加一个释义器，来解释教师模型的特征图；学生网络上添加一个翻译器，来帮助学生模型理解教师模型释义器的内容。学生模型通过与标签的交叉熵和释义器-翻译器的知识转移共同训练。
 

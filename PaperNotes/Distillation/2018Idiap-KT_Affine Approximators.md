@@ -14,7 +14,7 @@ Idiap 2018 ?
 >
 > 使用雅可比惩罚训练神经网络可以提高噪声的稳定性
 
-## Method & Theoretical Derivation
+## Method & Theoretical Proofs
 
 根据一阶泰勒公式，对函数$f:\mathbb{R}^D \rightarrow \mathbb{R}$，在一个邻域内$\{ x+\Delta x:||\Delta x||\le \epsilon \}$：
 $$
@@ -47,7 +47,7 @@ $$
 \mathbb{E}_{\xi}[-\sum^k_{i=1}\mathcal{T}^i_s(x+\xi)log(\mathcal{S}^i_s(x+\xi))] \approx -\sum_{i=1}^k\mathcal{T}^i_s(x)log(\mathcal{S}^i_s(x)) - \sigma^2\sum^k_{i=1}\frac{\nabla_x\mathcal{T}^i_s(x)^T \nabla_x\mathcal{S}^i_s(x)}{\mathcal{S}^i_s(x)}
 $$
 
-#### Derivation 1.
+#### Proofs 1.
 
 对$\mathcal{T}(x+\xi),\mathcal{S}(x+\xi)$做一阶泰勒展开，代入有：
 $$
@@ -115,7 +115,7 @@ $$
 \mathbb{E}_{\xi}[-\sum^k_{i=1}y^i(x)log(\mathcal{S}^i_s(x+\xi))] \approx - \sum_{i=1}^ky^i(x)log(\mathcal{S}^i_s(x)) + \sigma^2\sum^k_{i=1}y^i(x)\frac{||\nabla_x\mathcal{S}^i_s(x)||^2_2}{\mathcal{S}^i_s(x)^2}
 $$
 
-#### Derivation 2.
+#### Proofs 2.
 
 对$\mathcal{S}(x+\xi)$做一阶泰勒展开，代入有：
 $$
