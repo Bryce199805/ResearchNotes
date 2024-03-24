@@ -1,6 +1,6 @@
 # Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results
 
-[NeurIPS 2017](https://proceedings.neurips.cc/paper/2017/hash/68053af2923e00204c3ca7c6a3150cf7-Abstract.html)	no code 	半监督学习
+**[NeurIPS 2017](https://proceedings.neurips.cc/paper/2017/hash/68053af2923e00204c3ca7c6a3150cf7-Abstract.html)	no code 	半监督学习	CIFAR10 SVHN** 
 
 这项工作针对2017ICLR提出的时序集成模型做出了改进，原模型学习到的知识以很慢的速度融入到训练过程中，这导致训练速度较慢，本文通过引入学生模型的EMA权重来逐步更新教师模型的权重，从而加快训练进程。
 
