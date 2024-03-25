@@ -1,6 +1,12 @@
 # Local Affine Approximations for Improving Knowledge Transfer
 
-Idiap 2018 ?
+Idiap 2018 ?	Suraj Srinivas   Franc ̧ois Fleuret  
+
+# Knowledge Transfer with Jacobian Matching
+
+PMLR 2018	Suraj Srinivas   Franc ̧ois Fleuret
+
+
 
 本文提出了通过雅可比矩阵的匹配来进行师生模型之间的知识转移，本文认为两个网络的雅可比矩阵匹配等价于在训练过程中对输入添加噪声的软标签进行匹配，通过泰勒公式对神经网络进行仿射逼近，验证了这一观点。 我给出了完整的证明过程。
 
@@ -16,9 +22,11 @@ Idiap 2018 ?
 
 ## Method & Theoretical Proofs
 
+![image-20240325113505948](imgs/image-20240325113505948.png)
+
 根据一阶泰勒公式，对函数$f:\mathbb{R}^D \rightarrow \mathbb{R}$，在一个邻域内$\{ x+\Delta x:||\Delta x||\le \epsilon \}$：
 $$
-f(x+\Delta x)=f(x) + \nabla_xf(x)^T(\Delta x) + \mathcal{O}(\epsilon) \approx f(x) + \nabla_xf(x)^T(\Delta x) 
+f(x+\Delta x)=f(x) + \nabla_xf(x)^T(\Delta x) + \mathcal{O}(\epsilon) \approx f(x) + \nabla_xf(x)^T(\Delta x)
 $$
 这是函数f(·)在局部邻域内的局部仿射近似，这种近似对于分析神经网络这样的非线性对象是有效的。要构造整个神经网络的仿射逼近，必须构造网络中所有这些非线性项的仿射逼近，而神经网络的非线性性通常来源于ReLU等非线性激活函数。
 
@@ -32,7 +40,7 @@ $$
 
 我们认为**两个网络的雅可比矩阵匹配等价于在训练过程中对输入添加噪声的软标签进行匹配。**
 
-
+![image-20240325113453119](imgs/image-20240325113453119.png)
 
 ### Proposition 1.
 
