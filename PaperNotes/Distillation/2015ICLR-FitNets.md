@@ -30,7 +30,7 @@
 
 利用教师的提示层训练学生的引导层，根据HT损失来进行优化：
 $$
-\mathcal{L}(W_{Guided}, W_r) = \frac{1}{2}||u_h(x;W_{Hint}) - r(v_g(x;W_{Guided});W_r)||^2
+\mathcal{L}_{HT}(W_{Guided}, W_r) = \frac{1}{2}||u_h(x;W_{Hint}) - r(v_g(x;W_{Guided});W_r)||^2
 $$
 $W_{Guided}$，$W_r$分别表示学生/教师模型中引导/提示层的参数，$W_r$表示回归层的参数，用于对齐提示层和引导层的大小
 
