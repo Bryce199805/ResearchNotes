@@ -1,6 +1,6 @@
 # Batch Renormalization: Towards Reducing Mini-Batch Dependence in Batch-Normalized Models
 
-[NeurIPS 2017](https://proceedings.neurips.cc/paper/2017/hash/c54e7837e0cd0ced286cb5995327d1ab-Abstract.html)
+[NeurIPS 2017](https://proceedings.neurips.cc/paper/2017/hash/c54e7837e0cd0ced286cb5995327d1ab-Abstract.html)	no code 
 
 批量化虽然有效，但不太适合小型或非独立同分布的minibatch，我们认为是由于模型中的这些激活在训练和推理阶段计算方式不同导致的。这项工作改进了BatchNorm层，不在直接使用小批量内数据的均值方差来进行归一化操作，而是引入一个通过小批量统计量累计计算的总体统计量，来纠正小批量与总体统计量之间的差异。
 
@@ -50,3 +50,12 @@ $$
 我们将此仿射变换的参数r和d视为固定的，即使他们是从小批量本身计算得出的，r和d纠正了小批量统计量与总体统计量的不同，与BN中可训练的$\gamma,\beta$不同，r和d不是通过梯度下降来训练的，并且在小批量之间有所不同，因为他们依赖于当前小批量的统计数据。
 
 批量化虽然有效，但不太适合小型或非独立同分布的minibatch，我们认为是由于模型中的这些激活在训练和推理阶段计算方式不同导致的。
+
+
+
+### Discussion 
+
+**test on small mini-batches and Non-i.i.d. mini-batches**
+
+
+
