@@ -4,6 +4,8 @@
 
 *Tong He  Chunhua Shen   Zhi Tian   Dong Gong   Changming Sun  Youliang Yan*
 
+这项工作将教师网络中的知识转化为更具信息含量的压缩空间，训练了一个自编码器来挖掘隐含的结构信息将知识翻译成更容易被学生模型理解的格式（这里的思想与**Paraphrasing Complex Network: Network Compression via Factor Transfer 2018NeurIPS**非常相似）；由于师生模型之间的差异，小模型由于有限的感受野和抽象能力很难捕获教师网络中的长程依赖关系，提出一个亲和蒸馏模块来学习这种长程依赖。
+
 ## Introduction 
 
 准确率和效率对于语义分割任务至关重要，现有的FCNs由于一系列高分辨率特征图导致计算量大，通过下采样操作降低特征图分辨率虽然能够提高效率但是会显著降低精度。
