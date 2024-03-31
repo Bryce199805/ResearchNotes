@@ -19,3 +19,14 @@ $$
 \underset{n \rightarrow \infty}{lim} x_n=x
 $$
 
+### 上标记
+
+| 符号            | markdown      |
+| --------------- | ------------- |
+| $\vec{a}$       | \vec{a}       |
+| $\overline{a}$  | \overline{a}  |
+| $\widehat{a}$   | \widehat{a}   |
+| $\widetilde{a}$ | \widetilde{a} |
+| $\dot{a}$       | \dot{a}       |
+| $\ddot{a}$      | \ddot{a}      |
+
