@@ -46,6 +46,8 @@ $$
 | $\bigtriangledown$ | \bigtriangledown |
 | $\triangleleft$    | \triangleleft    |
 | $\triangleright$   | \triangleright   |
+| $\circ$            | \circ            |
+| $\bullet$          | \bullet          |
 
 
 
@@ -75,10 +77,17 @@ $$
 | ---------------- | -------------- |
 | $\textbackslash$ | \textbackslash |
 
-### 上下大括号
+### 括号
 
-| 符号                     | markdown               |
-| :----------------------- | :--------------------- |
-| $\overbrace{abc}^{123}$  | \overbrace{abc}^{123}  |
-| $\underbrace{abc}_{123}$ | \underbrace{abc}_{123} |
+| 符号                                                         | markdown                                                     |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| $\overbrace{abc}^{123}$                                      | \overbrace{abc}^{123}                                        |
+| $\underbrace{abc}_{123}$                                     | \underbrace{abc}_{123}                                       |
+| $\big( x \big)$                                              | \big( x \big)                                                |
+| $\Big( x \Big)$                                              | \Big( x \Big)                                                |
+| $\bigg( x \bigg)$                                            | \bigg( x \bigg)                                              |
+| $\Bigg( x \Bigg)$                                            | \Bigg( x \Bigg)                                              |
+| $\Bigg(\bigg(\Big(\big((x)\big)\Big)\bigg)\Bigg)$            | \Bigg(\bigg(\Big(\big((x)\big)\Big)\bigg)\Bigg)              |
+| $\Bigg[\bigg[\Big[\big[[x]\big]\Big]\bigg]\Bigg]$            | \Bigg[\bigg[\Big[\big[[x]\big]\Big]\bigg]\Bigg]              |
+| $\Bigg \langle \bigg \langle \Big \langle\big\langle\langle x \rangle \big \rangle\Big\rangle\bigg\rangle\Bigg\rangle$ | \Bigg \langle \bigg \langle \Big \langle\big\langle\langle x \rangle \big \rangle\Big\rangle\bigg\rangle\Bigg\rangle |
 
