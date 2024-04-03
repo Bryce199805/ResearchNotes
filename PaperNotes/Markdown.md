@@ -49,6 +49,17 @@ $$
 | $\circ$            | \circ            |
 | $\bullet$          | \bullet          |
 
+### 集合
+
+| 符号          | markdown    |
+| ------------- | ----------- |
+| $\cup$        | \cup        |
+| $\cap$        | \cap        |
+| $\vee$        | \vee        |
+| $\wedge$      | \wedge      |
+| $\emptyset$   | \emptyset   |
+| $\varnothing$ | \varnothing |
+
 
 
 ### 上标记
