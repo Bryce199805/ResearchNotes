@@ -60,6 +60,43 @@ $$
 | $\emptyset$   | \emptyset   |
 | $\varnothing$ | \varnothing |
 
+### 箭头
+
+| 符号                  | markdown            |
+| --------------------- | ------------------- |
+| $\uparrow$            | \uparrow            |
+| $\downarrow$          | \downarrow          |
+| $\updownarrow$        | \updownarrow        |
+| $\Uparrow$            | \Uparrow            |
+| $\Downarrow$          | \Downarrow          |
+| $\Updownarrow$        | \Updownarrow        |
+| $\rightarrow$         | \rightarrow         |
+| $\leftarrow$          | \leftarrow          |
+| $\leftrightarrow$     | \leftrightarrow     |
+| $\Rightarrow$         | \Rightarrow         |
+| $\Leftarrow$          | \Leftarrow          |
+| $\Leftrightarrow$     | \Leftrightarrow     |
+| $\longrightarrow$     | \longrightarrow     |
+| $\longleftarrow$      | \longleftarrow      |
+| $\longleftrightarrow$ | \longleftrightarrow |
+| $\Longrightarrow$     | \Longrightarrow     |
+| $\Longleftarrow$      | \Longleftarrow      |
+| $\Longleftrightarrow$ | \Longleftrightarrow |
+| $\mapsto$             | \mapsto             |
+| $\longmapsto$         | \longmapsto         |
+| $\hookleftarrow$      | \hookleftarrow      |
+| $\hookrightarrow$     | \hookrightarrow     |
+| $\rightharpoonup$     | \rightharpoonup     |
+| $\leftharpoondown$    | \leftharpoondown    |
+| $\rightleftharpoons$  | \rightleftharpoons  |
+| $\leftharpoonup$      | \leftharpoonup      |
+| $\rightharpoondown$   | \rightharpoondown   |
+| $\leadsto$            | \leadsto            |
+| $\nearrow$            | \nearrow            |
+| $\searrow$            | \searrow            |
+| $\swarrow$            | \swarrow            |
+| $\nwarrow$            | \nwarrow            |
+
 
 
 ### 上标记
