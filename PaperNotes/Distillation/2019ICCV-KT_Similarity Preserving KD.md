@@ -31,7 +31,7 @@ G^{(l)}_{S[i,:]} = \frac{\widetilde{G}^{(l)}_{S[i,:]}}{||\widetilde{G}^{(l)}_{S[
 $$
 因此我们定义相似性保持(Similarity-Preserving)蒸馏损失：
 $$
-\mathcal{L}(G_T, G_S) \ \frac{1}{b^2}\sum_{(l,l')\in \mathcal{I}}||G^{(l)}_T - G^{(l')}_S||^2_F
+\mathcal{L}(G_T, G_S) = \frac{1}{b^2}\sum_{(l,l')\in \mathcal{I}}||G^{(l)}_T - G^{(l')}_S||^2_F
 $$
 其中$\mathcal{I}$表示$(l,l')$的层对（如每一组末尾的最后一层），$||·||_F$是矩阵的F范数（取值上与$||·||_{m_2}$范数相同），最终定义学生网络的总损失：
 $$
