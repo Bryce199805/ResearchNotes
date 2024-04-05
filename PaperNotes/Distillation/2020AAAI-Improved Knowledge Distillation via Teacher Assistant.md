@@ -1,6 +1,6 @@
 # Improved Knowledge Distillation via Teacher Assistant
 
-[AAAI2020](https://ojs.aaai.org/index.php/AAAI/article/view/5963)	[**code in github**](https://github.com/imirzadeh/Teacher-Assistant-Knowledge-Distillation)
+[AAAI2020](https://ojs.aaai.org/index.php/AAAI/article/view/5963)	[**code in github**](https://github.com/imirzadeh/Teacher-Assistant-Knowledge-Distillation)	**20240315**
 
 **"a teacher can effectively transfer its knowledge to students up to a certain size, not smaller."**
 
