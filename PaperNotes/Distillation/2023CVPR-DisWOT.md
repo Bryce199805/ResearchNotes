@@ -27,7 +27,7 @@
 ### Search for Optimal Student Network
 
 #### Semantic Similarity Metric
-
+***CVPR2016 CAM***  
 我们的目标是设计无训练的学生架构，以更好的匹配具有计算约束的教师模型，我们分析随机初始化的师生模型的目标定位性能。我们使用CAM映射[***2016CVPR CAM***]来定义语义对象区域，给定一个小批量数据，我们将教师网络T的全局平均池化层GAP之前的高层特征图定义为$A_T\in R^{B\times C_T \times H_T \times W_T}$其中B为batchsize，CT表示输出通道数量，HT WT为空间维度。引入$A^c_T\in R^{N\times H_T\times W_T}$作为第c个通道的特征图，对学生Si同理有$A_{S_i} \in R^{B\times C_S \times H_S \times W_S}, A^c_{S_i}\in R^{N\times H_S\times W_S}$，计算学生网络和教师网络第n个类的Grad-CAM映射，有：
 $$
 G_T = \sum^{C_T}_{c=1}w^T_{n,c}A^c_T;\ G_{S_i} = \sum^{C_S}_{c=1}w^S_{n,c}A^c_{S_i}
@@ -39,7 +39,7 @@ $$
 $$
 
 #### Relation Similarity Metric
-
+***ICCV2019 Similarity-Preserving KD***  
 为了缩小师生差距，提高关系蒸馏性能，我们使用相关矩阵作为样本度量来搜索最优的学生网络。对激活映射图$A_T\in R^{B\times C_T \times H_T \times W_T}, A_S^i\in R^{B \times C_i \times H_i \times W_i}$,师生网络中的小批量样本的相关矩阵：
 $$
 \mathcal{A}^T = \frac{(\widetilde{A}_T)·(\widetilde{A}_T)^T}{||(\widetilde{A}_T)·(\widetilde{A}_T)^T||_2} , \ \mathcal{A}^{S_i} = \frac{(\widetilde{A}_S)·(\widetilde{A}_S)^T}{||(\widetilde{A}_S)·(\widetilde{A}_S)^T||_2}
