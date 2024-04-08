@@ -5,6 +5,12 @@
 | 数学算式 | markdown |
 | -------- | -------- |
 | $\nabla$ | \nabla   |
+| $\int$   | \int     |
+| $\iint$  | \iint    |
+| $\iiint$ | \iiint   |
+| $\oint$  | \oint    |
+| $\lim$   | \lim     |
+| $\infty$ | \infty   |
 
 
 
