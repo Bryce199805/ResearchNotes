@@ -1,8 +1,8 @@
 # Class-relation Knowledge Distillation for Novel Class Discovery
 
-[ICCV 2023](https://openaccess.thecvf.com/content/ICCV2023/html/Gu_Class-relation_Knowledge_Distillation_for_Novel_Class_Discovery_ICCV_2023_paper.html)	[code in github](https://github.com/kleinzcy/Cr-KD-NCD)	
+**[ICCV 2023](https://openaccess.thecvf.com/content/ICCV2023/html/Gu_Class-relation_Knowledge_Distillation_for_Novel_Class_Discovery_ICCV_2023_paper.html)	[code in github](https://github.com/kleinzcy/Cr-KD-NCD)	CIFAR100 Stanford Cars CUB Aircraft**
 
-
+本文提出了一种利用类关系蒸馏的增量学习方法，将新类发现任务转化为一个最优传输问题利用Sinkhorn算法进行求解，为解决灾难性以往问题，使模型能够记住先前的类别，提出了类别关系蒸馏，将新类发现阶段的就类别输出头的预测输出根据权重进行标准化后，与预训练的监督模型进行蒸馏，让两者的分布尽可能的相似。
 
 ## Introduction 
 
@@ -26,7 +26,7 @@
 
 ### Class Relation Distillation Framework
 
-首先给出NCD(Novel Class Discovery)的问题设置和符号，训练数据有两部分组成，已标记的已知类$\mathcal{D}^l=\{x^l_i, y^l_i\}_{i=0}^{|\mathcal{D}^l|}$和未标记的新类$\mathcal{D}^u=\{x^j_u\}_{j=0}^{|\mathcal{D}^u|}$，x,y表示输入数据和对应的标签，我们使用$Y^l=\{1, 2, ..., C^l\}, Y^u=\{C^l+1, C^l+2, ..., C^l+C^u\}$来分别表示已知类和新类的类别空间。
+首先给出NCD(Novel Class Discovery)的问题设置和符号，训练数据有两部分组成，已标记的已知类$\mathcal{D}^l=\{x^l_i, y^l_i\}_{i=0}^{|\mathcal{D}^l|}$和未标记的新类$\mathcal{D}^u=\{x_j^u\}_{j=0}^{|\mathcal{D}^u|}$，x,y表示输入数据和对应的标签，我们使用$Y^l=\{1, 2, ..., C^l\}, Y^u=\{C^l+1, C^l+2, ..., C^l+C^u\}$来分别表示已知类和新类的类别空间。
 
 我们采用一个NCD的通用模型结构，包括一个编码器f，和两个余弦分类器头，hl用于已知类，hu用于新类，编码器可以是卷积神经网络或是ViT。给定一个来自已知或新类的图像，首先通过共享编码器来将其投影到嵌入空间中，对嵌入空间进行归一化处理，将其输送到已知类和新类分类头上，无论输入是已知的还是新的，都会经过两个头产生两个输出，最后将两个输出串联起来作为最终的预测结果。这个过程可以写为：
 $$
