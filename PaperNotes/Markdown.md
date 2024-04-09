@@ -12,8 +12,6 @@
 | $\lim$   | \lim     |
 | $\infty$ | \infty   |
 
-
-
 ### 大括号
 
 $$
@@ -54,6 +52,39 @@ $$
 | $\triangleright$   | \triangleright   |
 | $\circ$            | \circ            |
 | $\bullet$          | \bullet          |
+
+### 希腊字母
+
+| 大写       | markdown | 小写          | markdown    |
+| ---------- | -------- | ------------- | ----------- |
+| $\Alpha$   | \Alpha   | $\alpha$      | \alpha      |
+| $\Beta$    | \Beta    | $\beta$       | \beta       |
+| $\Gamma$   | \Gamma   | $\gamma$      | \gamma      |
+| $\Delta$   | \Delta   | $\delta$      | \delta      |
+| $\Epsilon$ | \Epsilon | $\epsilon$    | \epsilon    |
+|            |          | $\varepsilon$ | \varepsilon |
+| $\Zeta$    | \Zeta    | $\zeta$       | \zeta       |
+| $\Eta$     | \Eta     | $\eta$        | \eta        |
+| $\Theta$   | \Theta   | $\theta$      | \theta      |
+| $\Iota$    | \Iota    | $\iota$       | \iota       |
+| $\Kappa$   | \Kappa   | $\kappa$      | \kappa      |
+| $\Lambda$  | \Lambda  | $\lambda$     | \lambda     |
+| $\Mu$      | \Mu      | $\mu$         | \mu         |
+| $\Nu$      | \Nu      | $\nu$         | \nu         |
+| $\Xi$      | \Xi      | $\xi$         | \xi         |
+| $\Omicron$ | \Omicron | $\omicron$    | \omicron    |
+| $\Pi$      | \Pi      | $\pi$         | \pi         |
+| $\Rho$     | \Rho     | $\rho$        | \rho        |
+| $\Sigma$   | \Sigma   | $\sigma$      | \sigma      |
+| $\Tau$     | \Tau     | $\tau$        | \tau        |
+| $\Upsilon$ | \Upsilon | $\upsilon$    | \upsilon    |
+| $\Phi$     | \Phi     | $\phi$        | \phi        |
+|            |          | $\varphi$     | \varphi     |
+| $\Chi$     | \Chi     | $\chi$        | \chi        |
+| $\Psi$     | \Psi     | $\psi$        | \psi        |
+| $\Omega$   | \Omega   | $\omega$      | \omega      |
+
+
 
 ### 集合
 
