@@ -1,6 +1,6 @@
 # Cross-Layer Distillation with Semantic Calibration
 
-**[AAAI 2021](https://ojs.aaai.org/index.php/AAAI/article/view/16865)	[code in github](https://github.com/DefangChen/SemCKD)	CIFAR100**
+**[AAAI 2021](https://ojs.aaai.org/index.php/AAAI/article/view/16865)	[code in github](https://github.com/DefangChen/SemCKD)	CIFAR100**	**20240412**
 
 *Defang Chen, Jian-Ping Mei, Yuan Zhang, Can Wang, Yan Feng, Chun Chen*
 

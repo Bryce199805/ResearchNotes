@@ -1,6 +1,6 @@
 # Training Deep Neural Networks in Generations: A More Tolerant Teacher Educates Better Students
 
-**[AAAI 2019](https://ojs.aaai.org/index.php/AAAI/article/view/4506)	no code 	CIFAR100  ILSVRC2012	20240410**
+**[AAAI 2019](https://ojs.aaai.org/index.php/AAAI/article/view/4506)	no code 	CIFAR100  ILSVRC2012	20240412**
 
 *Chenglin Yang  Lingxi Xie  Siyuan Qiao  Alan L. Yuille*
 

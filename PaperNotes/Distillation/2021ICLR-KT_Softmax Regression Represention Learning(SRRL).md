@@ -1,6 +1,6 @@
 # Knowledge Distillation via Softmax Regression Representation Learning
 
-**[ICLR 2021](https://openreview.net/forum?id=ZzwDy_wiWv)	[code in github](https://github.com/jingyang2017/KD_SRRL)	CIFAR10/100  ImageNet**
+**[ICLR 2021](https://openreview.net/forum?id=ZzwDy_wiWv)	[code in github](https://github.com/jingyang2017/KD_SRRL)	CIFAR10/100  ImageNet**	**20240412**
 
 *Jing Yang, Brais Martinez, Adrian Bulat, Georgios Tzimiropoulos*
 
