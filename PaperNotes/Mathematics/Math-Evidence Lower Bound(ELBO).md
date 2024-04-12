@@ -30,19 +30,19 @@ $$
 
 ##  Deriving the ELBO
 
-引入一个新的分布$q_\phi(z)$作为潜变量z的后验分布$p_\theta(z|x)$的近似，边际对数似然$log\ p_\theta(x)$可以表示为：
-$$
+引入一个新的分布$q_\phi(z)$作为潜变量z的后验分布$p_\theta(z|x)$的近似，边际对数似然$log\ p_\theta(x)$可以表示为：  
+$$  
 \begin{aligned}
 log\ p_\theta(x) &= log[\frac{p_\theta(x, z)}{p_\theta(z|x)}] = log\ p_\theta(x, z) - log\ p_\theta(z|x) \\
 &= log\ p_\theta(x, z) -log\ q_\phi(z)  - log\ p_\theta(z|x) + log\ q_\phi(z) \\
 &= log[\frac{p_\theta(x, z)}{q_\phi(z)}] + log[\frac{q_\phi(z)}{p_\theta(z|x)}]
-
 \end{aligned}
 $$
+
 两边求$q_{\phi}(z)$的期望：
+
 $$
 \begin{aligned}
-
 &\mathbb{E}_{z\sim q_\phi(z)}[log\ p_\theta(x)] = \sum_z q_\phi(z) log\ p_\theta(x) = log\ p_\theta(x)\sum_zq_\phi(z) = log\ p_\theta(x) \\
 &\mathbb{E}_{z\sim q_\phi(z)}[log[\frac{p_\theta(x, z)}{q_\phi(z)}] + log[\frac{q_\phi(z)}{p_\theta(z|x)}]] = \mathbb{E}_{z\sim q_\phi(z)}[log[\frac{p_\theta(x, z)}{q_\phi(z)}]] + \mathbb{E}_{z\sim q_\phi(z)}[log[\frac{q_\phi(z)}{p_\theta(z|x)}]] \\
 &=\sum_z q_\phi(z) log[\frac{p_\theta(x, z)}{q_\phi(z)}] + \sum_zq_\phi(z)log[\frac{q_\phi(z)}{p_\theta(z|x)}] = \mathcal{L} + KL(q_\phi(z) || p_\theta(z|x)) \\
