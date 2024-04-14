@@ -2,15 +2,18 @@
 
 ### 常用数学符号
 
-| 数学算式 | markdown |
-| -------- | -------- |
-| $\nabla$ | \nabla   |
-| $\int$   | \int     |
-| $\iint$  | \iint    |
-| $\iiint$ | \iiint   |
-| $\oint$  | \oint    |
-| $\lim$   | \lim     |
-| $\infty$ | \infty   |
+| 数学算式  | markdown |
+| --------- | -------- |
+| $\nabla$  | \nabla   |
+| $\int$    | \int     |
+| $\iint$   | \iint    |
+| $\iiint$  | \iiint   |
+| $\oint$   | \oint    |
+| $\lim$    | \lim     |
+| $\infty$  | \infty   |
+| $\oplus$  | \oplus   |
+| $\odot$   | \odot    |
+| $\otimes$ | \otimes  |
 
 ### 大括号
 
