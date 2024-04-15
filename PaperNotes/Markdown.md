@@ -99,6 +99,7 @@ $$
 | $\wedge$      | \wedge      |
 | $\emptyset$   | \emptyset   |
 | $\varnothing$ | \varnothing |
+| $\setminus$   | \setminus   |
 
 ### 箭头
 
