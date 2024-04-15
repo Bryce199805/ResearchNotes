@@ -69,7 +69,7 @@ $$
 > $$
 > L_{kd}(\tau_{n+1}) \geq L_{kd}(\tau_n) \tag{9}
 > $$
-> $\lambda$逐步增加：$
+> $\lambda$逐步增加：
 > $$
 > \lambda_{n+1} \geq \lambda_n \tag{10}
 > $$
@@ -95,7 +95,7 @@ $E_{loops}$为难度尺度变化的超参数，通常$\lambda_{max}, \lambda_{mi
 
 为了获得更好的蒸馏性能，一个全局温度对所有的情况是不准确的，我们提出了Instance-T的变体，他单独预测了所有实例的温度，例如128个样本对应128个温度值。我们提出利用概率分布的统计信息来控制自身的平滑性，引入两个MLP层，以师生模型的预测值作为输出，来计算温度系数，该模块会自动学习原始分布和平滑分布之间的隐含关系。为了保证温度系数的非负性：
 $$
-\tau = \tau_{init} + \tau_{range}(\delta(T_{pred}))
+\tau = \tau_{init} + \tau_{range}(\delta(T_{pred})) \tag{12}
 $$
 $\tau_{init}$表示温度的初始值，$\tau_{range}$表示温度的范围， $\sigma(·)$为sigmoid函数，Tpred为预测值。$\tau_{init}, \tau_{range}$设为1， 20。
 
