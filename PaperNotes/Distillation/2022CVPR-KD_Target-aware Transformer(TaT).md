@@ -4,7 +4,9 @@
 
 这项工作针对先前工作中特征图一对一匹配的语义不匹配问题给出解决方案，首先提出了Target-aware Transformer(TaT)，利用教师特征对学生的语义特征进行重建，经过变换的学生特征能够在语义上于对应位置的教师特征保持一致，对于大特征图这个步骤复杂度太高，提出了分组蒸馏和锚点蒸馏，前者将特征图切块进行蒸馏得到局部特征，后者对特征图池化，得到较小的特征图进行蒸馏，得到全局特征，两者相辅相成最终达到不错的性能。
 
-***2021AAAI SemCKD Cross-Layer Distillation with Semantic Calibration*也指出特征图之间的简单匹配可能会导致语义不匹配**
+***2021AAAI SemCKD Cross-Layer Distillation with Semantic Calibration* 也指出特征图之间的简单匹配可能会导致语义不匹配**
+
+**2021ICCV Exploring Inter-Channel Correlation for Diversity-preserved Knowledge Distillation 提出了分块蒸馏**
 
 ## Introduction
 
