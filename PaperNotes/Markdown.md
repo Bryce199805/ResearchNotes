@@ -100,6 +100,12 @@ $$
 | $\emptyset$   | \emptyset   |
 | $\varnothing$ | \varnothing |
 | $\setminus$   | \setminus   |
+| $\subseteq$   | \subseteq   |
+| $\subsetneq$  | \subsetneq  |
+| $\supseteq$   | \supseteq   |
+| $\subset$     | \subset     |
+| $\supset$     | \supset     |
+| $\not\subset$ | \not\subset |
 
 ### 箭头
 
