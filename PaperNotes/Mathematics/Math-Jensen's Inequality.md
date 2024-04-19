@@ -27,33 +27,35 @@ $$
 
 由数学归纳法：
 $$
-\begin{flalign}
-& n=1: f(t_1x_1) \leq t_1f(x_1) \tag{3} &
-\end{flalign}
+\begin{aligned}
+& n=1:f(t_1x_1) \leq t_1f(x_1) &
+\end{aligned}
+\tag{3}
 $$
 
 $$
-\begin{flalign}
-& n=2:f(t_1x_1+t_2x_2) \leq t_1f(x_1) + t_2f(x_2) \tag{4} &
-\end{flalign}
+\begin{aligned}
+& n=2:f(t_1x_1+t_2x_2) \leq t_1f(x_1) + t_2f(x_2) &
+\end{aligned}
+\tag{4}
 $$
 
 由凸函数定义上式显然成立。
 
 假设：$n=k: \leq t_1f(x_1)+t_2f(x_2)+...+t_kf(x_k)$成立:
 $$
-\begin{flalign}
+\begin{aligned}
 & n = k+1: &\\
 & f(t_1x_1 + t_2x_2+...+ t_kx_x + t_{k+1}x_{k+1}) = f[(1-t_{k+1})\frac{t_1x_1 + t_2x_2+...+t_kx_x}{(1-t_{k+1})} + t_{k+1}x_{k+1}]
-\end{flalign} \tag{5}
+\end{aligned} \tag{5}
 $$
 由Eq(3), Eq(4):
 $$
-\begin{flalign}
+\begin{aligned}
 & f[(1-t_{k+1})\frac{t_1x_1 + t_2x_2+...+t_kx_x}{(1-t_{k+1})} + t_{k+1}x_{k+1}]  &\\
 & \leq (1-t_{k+1}) f(\frac{t_1}{1-t_{k+1}}x_1 + \frac{t_2}{1-t_{k+1}}x_2 + ... + \frac{t_k}{1-t_{k+1}}x_k) + t_{k+1}x_{k+1} \\
 & \leq t_1f(x_1) + t_2f(x_2) + ... + t_kf(x_k) + t_{k+1}x_{x+1}
-\end{flalign} \tag{6}
+\end{aligned} \tag{6}
 $$
 得证。
 
@@ -89,7 +91,6 @@ $$
 $$
 \sum_iP(i)log\frac{P(i)}{Q(i)} = \sum_iP(i)[-log\frac{Q(i)}{P(i)}] \geq -log[\sum_iP(i)\frac{Q(i)}{P(i)}] = -log\sum_iQ(i)=0 \\
 KL(P||Q) \geq 0
-
 \tag{11}
 $$
 
