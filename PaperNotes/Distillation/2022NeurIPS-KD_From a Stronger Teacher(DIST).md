@@ -40,11 +40,13 @@ d(a, b)=0不需要ab完全相同，映射函数$\phi\ \psi$应当是单调的且
 $$
 d(m_1a+n_1, m_2b+n_2) = d(a,b)
 $$
-在预测的缩放和偏移单独变化时，这个度量可能是不变的，为了更好的结果，我们次啊用广泛使用的皮尔森距离度量：
+在预测的缩放和偏移单独变化时，这个度量可能是不变的，为了更好的结果，我们使用的皮尔森距离度量：
 $$
 d_p(u, v):=1- \rho_p(u, v) \\
 \rho_p(u, v) := \frac{Cov(u, v)}{Std(u)Std(v)} = \frac{\sum^C_{i=1}(u_i-\overline{u})(v_i-\overline{v})}{\sqrt{\sum^C_{i=1}(u_i-\overline{u})^2(v_i-\overline{v})^2}}
 $$
+> 皮尔逊相关系数有一个重要的数学特性是，因两个变量的位置和尺度的变化并不会引起该系数的改变，即它该变化的[不变量](https://zh.wikipedia.org/wiki/不变量) (由符号确定)。也就是说，我们如果把X移动到a + bX和把Y移动到c + dY，其中a、b、c和d是常数，并不会改变两个变量的相关系数.  --[wikipedia](https://zh.wikipedia.org/zh-cn/%E7%9A%AE%E5%B0%94%E9%80%8A%E7%A7%AF%E7%9F%A9%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0)
+
 $\rho(u,v)$表示皮尔森相关系数，Cov(u, v)是u、v的协方差，$Std(u),\overline{u}$分别表示其标准差和均值，因此我们定义类间相似性，对每对预测输出$Y_{i,:}^{(s)}, Y_{i,:}^{(t)}$，损失函数定义为：
 $$
 \mathcal{L}_{inter}:=\frac{1}{B}\sum^B_{i=1}d_p(Y_{i,:}^{(s)}, Y_{i,:}^{(t)})
