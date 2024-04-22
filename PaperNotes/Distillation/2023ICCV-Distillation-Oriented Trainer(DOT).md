@@ -93,8 +93,9 @@ DOT对蒸馏损失LKD施加较大的动量，对任务损失施加较小的动�
 ### Theoretical Analysis of Gradient
 
 我们将任务损失和蒸馏损失分解为:
+
 $$
-v_{ce} = v^{con} + v^{incon}_{ce} \\
+v_{ce} = v^{con} + v^{incon}_{ce}\\
 v_{kd} = v^{con} + v^{incon}_{ce}
 $$
 
