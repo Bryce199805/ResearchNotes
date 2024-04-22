@@ -57,13 +57,17 @@ $$
 #### Optimizer with Momentum
 
 对于SGD优化器，使用当前梯度（$g=\nabla_\theta\mathcal{L}(\theta) $）和历史梯度来更新网络参数$\theta$，SGD为网络参数维护一个动量缓冲区v：(loss.backward())
+
 $$
 v \leftarrow g+\mu v
 $$
+
 参数以梯度下降的规则更新：(optimizer.step())
+
 $$
 \theta \leftarrow \theta-\gamma v
 $$
+
 $\mu,\gamma$分别表示动量参数和学习率，动量参数通常设置为0.9
 
 #### Independent momentums for distillation and task losses
@@ -74,12 +78,14 @@ $\mu,\gamma$分别表示动量参数和学习率，动量参数通常设置为0.
 
 #### Distillation Oriented Trainer
 
-我们提出蒸馏导向训练器DOT，DOT为CE损失和KD损失保留了两个单独的动量缓冲器，分别表示为$v_{ce},v_{kd}$，DOT使用不同的动量系数更新这两个动量缓冲器，引入超参数$\Delta$，$v_{ce},v_{kd}$的系数分别设置为$\mu-\Delta,\mu+\Delta$，给定小批量数据，DOT首先计算Lce和Lkd的梯度，然后根据以下更新：
+我们提出蒸馏导向训练器DOT，DOT为CE损失和KD损失保留了两个单独的动量缓冲器，分别表示为$v_{ce},v_{kd}$，DOT使用不同的动量系数更新这两个动量缓冲器，引入超参数$\Delta$，$v_{ce},v_{kd}$ 的系数分别设置为$\mu-\Delta,\mu+\Delta$，给定小批量数据，DOT首先计算Lce和Lkd的梯度，然后根据以下更新：
+
 $$
 v_{ce} \leftarrow g_{ce}+(\mu-\Delta)v_{ce}\\
 v_{kd} \leftarrow g_{kd}+(\mu+\Delta)v_{kd}\\
 \theta \leftarrow \theta-\gamma(v_{ce}+v_{kd})
 $$
+
 DOT对蒸馏损失LKD施加较大的动量，对任务损失施加较小的动量，因此优化方向由蒸馏损失决定，DOT更好的利用教师的知识而缓解了因优化不足而导致的权衡问题。
 
 
@@ -91,16 +97,23 @@ $$
 v_{ce} = v^{con} + v^{incon}_{ce} \\
 v_{kd} = v^{con} + v^{incon}_{ce}
 $$
-$v^{con},v^{incon}_{ce},v^{incon}_{kd} $分别表示两种损失一致的梯度分量和各自不一致的分量。因此对于sgd：
+
+$v^{con},v^{incon}_{ce},v^{incon}_{kd}$分别表示两种损失一致的梯度分量和各自不一致的分量。因此对于sgd：
+
 $$
 v_{sgd}=g_{ce}+g_{kd}+\mu(v_{ce}+v_{kd})=g_{ce}+g_{kd}+\mu(v^{incon}_{ce} + v^{incon}_{ce} + 2v^{con})
 $$
+
 对于DOT：
+
 $$
 v_{dot}=g_{ce}+g_{kd}+(\mu - \Delta)v_{ce}+(\mu+\Delta)v_{kd}=g_{ce}+g_{kd}+(\mu - \Delta)(v^{con} + v^{incon}_{ce}) +(\mu+\Delta)(v^{con} + v^{incon}_{ce}) = 
 $$
+
 两者的差异:
+
 $$
 v_{diff} = v_{dot} - v_{sgd} = \Delta(v_{kd}^{incon} - v_{ce}^{incon})
 $$
+
 这表明当任务损失与蒸馏损失发生冲突，dot会加速蒸馏损失梯度的累计，因此蒸馏损失占据主导使学生网络更好的收敛。
