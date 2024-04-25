@@ -42,12 +42,12 @@ $$
 $$
 \begin{aligned}
 & q(C=1|T,S) = \frac{q(T,S|C=1)q(C=1)}{q(T,S|C=1)q(C=1)+q(T,S|C=0)q(C=0)} = \frac{p(T,S)}{p(T,S)+Np(T)p(S)} \\
-& = -log(1+N\frac{p(T)p(S)}{p(T,S)}) \leq -logN + log\frac{p(T,S)}{p(T)p(S)}
+& log\ q(C=1|T,S) = -log(1+N\frac{p(T)p(S)}{p(T,S)}) \leq -logN + log\frac{p(T,S)}{p(T)p(S)}
 \end{aligned}
 $$
 师生模型之间的互信息：
 $$
-I(T;S) = p(T,S)log\frac{p(T,S)}{p(T)p(S)} \geq p(T,S)(q(C=1|T,S)+ logN) \geq logN+\mathbb{E}_{q(T,S|C=1)}log\ q(C=1|T,S)
+I(T;S) = p(T,S)log\frac{p(T,S)}{p(T)p(S)} \geq p(T,S)(log\ q(C=1|T,S)+ logN) \geq logN+\mathbb{E}_{q(T,S|C=1)}log\ q(C=1|T,S)
 $$
 因此最大化师生模型表征空间互信息的下界转化为最大化$\mathbb{E}_{q(T,S|C=1)}log\ q(C=1|T,S)$，我们并不知道q(C=1|T,S)的真实分布，我们通过拟合模型$h:\{\mathcal{T},\mathcal{S}\} \rightarrow [0,1]$到数据分布q(C=1|T,S)的样本来估计它，$\mathcal{T},\mathcal{S}$表示表征空间的定义域，我们最大化该模型下的似然函数：
 $$
