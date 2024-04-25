@@ -54,6 +54,6 @@ $$
 $$
 HWM表示所有学生模型参数空间周围的参数，HWM的多个连续epoch的分类损失$\mathcal{L}^m_{ce}$反映了学生模型区域的范围，因此将该损失整合到学生模型的训练中来最小化该区域的曲率并平坦化损失地形，从而增强学生模型的泛化性能：
 $$
-\mathcal{L}^m = \omega\mathcal{L}^m_{ce} = (1-\omega)\mathcal{L}^{hwm}_{ce} + \beta\mathcal{L}(z^m, z^{en}) \tag{8}
+\mathcal{L}^m = \omega\mathcal{L}^m_{ce} + (1-\omega)\mathcal{L}^{hwm}_{ce} + \beta\mathcal{L}(z^m, z^{en}) \tag{8}
 $$
 ![image-20240422113356881](imgs/image-20240422113356881.png)
