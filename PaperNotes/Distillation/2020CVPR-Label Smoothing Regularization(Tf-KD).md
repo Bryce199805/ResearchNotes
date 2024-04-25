@@ -104,7 +104,7 @@ p^d(k) = \begin{cases}
 \end{aligned}
 \end{cases} \tag{8}
 $$
-其中K为类别数量，c为正确的白哦前，a是正确类的正确概率，该模型对任何数据集都有100%的正确率。
+其中K为类别数量，c为正确的标签，a是正确类的正确概率，该模型对任何数据集都有100%的正确率。
 $$
 \mathcal{L}_{reg} = (1-\alpha)H(q, p) + \alpha D_{KL}(p^d_\tau, p_\tau)	\tag{9}
 $$
