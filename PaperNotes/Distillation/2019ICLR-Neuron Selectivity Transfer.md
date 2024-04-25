@@ -1,6 +1,6 @@
 # Like What You Like: Knowledge Distill via Neuron Selectivity Transfer
 
-**[arXiv2017](https://arxiv.org/abs/1707.01219)	no code	CIFAR  ImageNet  Voc2007**
+**[arXiv2017 ICLR ](https://arxiv.org/abs/1707.01219)	no code	CIFAR  ImageNet  Voc2007**
 
 这项工作提出了一种新的知识转移方法，通过最小化师生模型特征图分布之间的最大均值差异（MMD）来匹配教师网络和学生网络中选择性模式的分布，通过不同的核函数来获得不同的损失计算，NST是对现有方法的补充，与KD相结合达到了更好的性能效果，进一步证明知识转移能够学习到更好的特征表示。
 
