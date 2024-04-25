@@ -1,1 +1,1 @@
-# This repository record my damn PhD career.
+# This repository record my damn Ph.D. career.
