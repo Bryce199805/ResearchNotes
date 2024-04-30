@@ -56,6 +56,34 @@ $$
 | $\circ$            | \circ            |
 | $\bullet$          | \bullet          |
 
+### 关系符号
+
+| 符号        | markdown  |
+| ----------- | --------- |
+| $\equiv$    | \equiv    |
+| $\models$   | \models   |
+| $\prec$     | \prec     |
+| $\succ$     | \succ     |
+| $\perp$     | \perp     |
+| $\preceq$   | \preceq   |
+| $\succeq$   | \succeq   |
+| $\simeq$    | \simeq    |
+| $\mid$      | \mid      |
+| $\ll$       | \ll       |
+| $\gg$       | \gg       |
+| $\asymp$    | \asymp    |
+| $\parallel$ | \parallel |
+| $\approx$   | \approx   |
+| $\cong$     | \cong     |
+| $\doteq$    | \doteq    |
+| $\propto$   | \propto   |
+| $\bowtie$   | \bowtie   |
+| $\Join$     | \Join     |
+| $\vdash$    | \vdash    |
+| $\dashv$    | \dashv    |
+
+
+
 ### 希腊字母
 
 | 大写       | markdown | 小写          | markdown    |
