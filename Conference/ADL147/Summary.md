@@ -500,3 +500,212 @@ DomainRAG: A Chinese Benchmark for Evaluating Domain-specific Retrieval-Augmente
 #### 可学习的文档标识符
 
 #### CorpusLM
+
+
+
+## Report 3
+
+## Report 4
+
+## Report 5
+
+## Report 6. LLM-Based Tool Learning and Autonomous Agents
+
+Survey: Tool Learning with Foundation Models arXiv2304
+
+![image-20240526225617851](imgs/image-20240526225617851.png)
+
+- 控制器提供可行的计划来满足用户的请求
+- 工具集合为一系列拥有不同功能的集合
+- 环境提供工具操作的平台
+- 感知者向控制器总结反馈信息
+
+![image-20240526230159979](imgs/image-20240526230159979.png)
+
+### Intent Understanding: understand the user task intent
+
+意图理解，理解用户的任务意图
+
+难点：理解用户的模糊指令
+
+将任务传递给下级执行之前，agent应当主动且明确的向用户询问缺失的细节
+
+![image-20240526231522480](imgs/image-20240526231522480.png)
+
+一个例子：
+
+![image-20240526231555046](imgs/image-20240526231555046.png)
+
+### Planning: divide the user query into sub-tasks
+
+将用户的查询分解为多个子问题来分别处理
+
+#### Chain of Thought (CoT)
+
+思维链方法：给出推导过程的思维过程
+
+![image-20240526232354418](imgs/image-20240526232354418.png)
+
+#### Tree of Thought (ToT)
+
+思维树方法：给出推导过程的搜索树
+
+![image-20240526232451604](imgs/image-20240526232451604.png)
+
+#### ReAct  2023 ICLR
+
+ReAct: Synergizing Reasoning and Acting in Language Models
+
+CoT推理帮助模型更新行动计划以及处理异常，而行动允许它与外部源（例如知识库或环境）进行交互，以收集更多信息
+
+![image-20240526232712864](imgs/image-20240526232712864.png)
+
+#### DFSDT 深度优先搜索的决策树
+
+ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs arXiv2307
+
+训练了 API 检索器来为每条指令推荐适当的 API
+
+![image-20240526233933016](imgs/image-20240526233933016.png)
+
+### Human-Agent Collaboration 人类-智能体协作
+
+有些问题全部由智能体来代理性能并不佳，但是将其中很小一部分交给人类完成性能能够得到大幅提升，引入人机协作问题
+
+![image-20240526234452934](imgs/image-20240526234452934.png)
+
+$\lambda$来控制人类的参与程度
+
+![image-20240526234809869](imgs/image-20240526234809869.png)
+
+### Tool Use: use the appropriate tool to solve sub-task
+
+#### 模仿学习：一个最简单的学习范式。
+
+通过记录人类使用工具的行为数据，让大模型来模拟人类的行为来了解工具
+
+![image-20240526234956578](imgs/image-20240526234956578.png)
+
+##### WebGPT
+
+WebGPT: Browser-assisted question-answering with human feedback arXiv2112
+
+- 模仿类使用搜索引擎的行为
+- 监督微调 + 强化学习
+- 只需 6,000 条标注数据
+
+![image-20240526235241742](imgs/image-20240526235241742.png)
+
+##### WebCPM: Chinese WebGPT
+
+Interactive web search for Chinese long-form question answering. ACL 2023
+
+中文版的WebGPT
+
+![image-20240526235319825](imgs/image-20240526235319825.png)
+
+在每个步骤中，搜索模型都会执行操作以收集证据，并将其发送给大模型以生成答案
+
+![image-20240526235402358](imgs/image-20240526235402358.png)
+
+##### WebShop
+
+agent学习网上购物
+
+![image-20240526235530148](imgs/image-20240526235530148.png)
+
+##### GUIAgent
+
+学习操作GUI工具，与VLM模型结合
+
+![image-20240526235609456](imgs/image-20240526235609456.png)
+
+#### 教程学习：让模型阅读工具手册来学习
+
+OpenAI的大模型都有很强的zero-shot能力，能够理解手册的内容
+
+Zero-shot & Few-shot 的例子
+
+![image-20240527000011510](imgs/image-20240527000011510.png)
+
+##### ToolBench
+
+https://github.com/OpenBMB/ToolBench
+
+- 集成了来自RapidAPI超过16000个API
+
+  - 选取了16, 000多个高质量API
+  - 涵盖了49个类别
+
+- 支持单工具或多工具的调用
+
+  - 简单的api指令集合
+  - chatgpt自动生成指令，可能包括一个或多个api
+
+  ![image-20240527000843773](imgs/image-20240527000843773.png)
+
+- 支持复杂的推理任务
+
+![image-20240527000512994](imgs/image-20240527000512994.png)
+
+#### 一个模型学习使用工具的例子：VPT
+
+Video PreTraining (VPT): Learning to Act by Watching Unlabeled Online Videos NeurIPS 2022
+
+### Memory: manage the working history
+
+#### Short-Term Memory  短期记忆
+
+短时记忆通常是通过上下文学习实现的，记忆信息直接写入prompt中
+
+![image-20240527001410443](imgs/image-20240527001410443.png)
+
+#### Short-Term Memory + Long-Term Memory 短期+长期记忆
+
+外部记忆存储+检索外部记忆+短期记忆
+
+![image-20240527001914512](imgs/image-20240527001914512.png)
+
+#### 如何存储长期记忆
+
+##### 直接写入Raw Text
+
+![image-20240527002121815](imgs/image-20240527002121815.png)
+
+##### 编码后写入
+
+![image-20240527002154719](imgs/image-20240527002154719.png)
+
+#### 存储策略
+
+- 基于LLM合并相同的记忆
+- 遵循先进先出的原则，最早的记忆会首先被覆盖
+
+![image-20240527002312355](imgs/image-20240527002312355.png)
+
+#### 人类对记忆能够自证和评估，我们希望模型也可以
+
+##### Self-summarization
+
+![image-20240527002749521](imgs/image-20240527002749521.png)
+
+##### Self-verification
+
+![image-20240527002812345](imgs/image-20240527002812345.png)
+
+#### Reflexion NeurIPS 2023
+
+利用语言反馈信号强化agent，从之前的失败中吸取教训
+
+![image-20240527002933155](imgs/image-20240527002933155.png)
+
+#### Agent的安全性讨论
+
+- Agent本身可能会被注入目的性的引导，例如用来购物的agent可能会被操控倾向于选择某类商品，这对用户是很难以察觉的
+- Agent调用的API本身安全性是否能够得到保障？有些工具本身就存在一些不安全的因素
+- Agent调用某个工具的原因是一个黑盒，这对一些敏感场景有风险（自动驾驶 医疗系统）
+
+
+
+## Report 7. 工业界专场
+
