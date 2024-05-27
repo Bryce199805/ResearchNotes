@@ -266,8 +266,6 @@ Large Language Models for Information Retrieval: A Survey  [arXiv23.8.14](https:
 
 ![image-20240525222934341](imgs/image-20240525222934341.png)
 
-
-
 #### 2. Retriever 检索器
 
 从海量文档中**高效高质**的返回相关结果.
@@ -478,8 +476,10 @@ DomainRAG: A Chinese Benchmark for Evaluating Domain-specific Retrieval-Augmente
 方法：
 
 - 使用特定领域的语料库和问题对于评估LLM有效利用来自这些特定领域的外部知识来解决专家问题的能力至关重要
+
 - 总结综合评价RAG模型的六个重要能力，并以人大招生为应用场景构建了评估这些能力的数据集
-- ![image-20240526000350164](imgs/image-20240526000350164.png)
+
+  ![image-20240526000350164](imgs/image-20240526000350164.png)
 
 ### Future Work
 
@@ -491,25 +491,213 @@ DomainRAG: A Chinese Benchmark for Evaluating Domain-specific Retrieval-Augmente
 
 ### Part 3 生成式文档检索
 
-#### Classical Work：DSI (Google)
-#### Classical Work: WebUltron (renda)
-#### Classical Work: NCI (MicroSoft)
+From Matching to Generation: A Survey on Generative Information Retrieval  arXiv2404
 
-#### 跳出Sequence范式，词袋模型
+*一个核心的问题：能否直接通过大模型完成文档的检索/召回？*
 
-#### 可学习的文档标识符
+- 大模型并没有检索能力
+- 大模型瞎编烂造的能力在检索相关问题上体现的淋漓尽致
+- 大模型需要定向微调才能实现检索能力
 
-#### CorpusLM
+![image-20240527100304250](imgs/image-20240527100304250.png)
+
+#### 生成式检索模型目前面临的问题
+
+![image-20240527100758594](imgs/image-20240527100758594.png)
+
+##### 增量学习问题
+
+	- 文档的动态更新，大模型怎么去适配？
+	- 如何处理海量的文档？
+	- 如何将文档嵌入到模型中？
+
+##### 文档标识定义
+
+- 如何定义DockID能够让模型更轻松的记忆和泛化
+
+##### 训练策略和模型架构
+
+- 如何设计架构和策略来让模型更高效的记忆和泛化海量文档
+
+##### 生成答案
+
+- 如何通过查询到的文档高效的生成答案
+
+#### 经典工作
+
+##### DSI (Google)
+
+提出一种分层的文档编码方案
+
+Transformer Memory as a Differentiable Search Index NeruIPS 2022
+
+![image-20240527101451844](imgs/image-20240527101451844.png)
+
+##### WebUltron (renda)
+
+给出一种三阶段训练框架
+
+WebUltron: An Ultimate Retriever on Webpages Under the Model-Centric Paradigm 2023 IEEE Transactions on Knowledge and Data Engineering
+
+![image-20240527101829440](imgs/image-20240527101829440.png)
+
+##### NCI (MicroSoft)
+
+A Neural Corpus Indexer for Document Retrieval NeruIPS 2022
+
+提出一种神经语料库检索器，序列到序列的网络
+
+![image-20240527102128282](imgs/image-20240527102128282.png)
+
+##### 跳出Sequence范式，词袋模型 (renda)
+
+Generative Retrieval via Term Set Generation  SIGIR 2024
+
+文档ID是序列化的形式，解码错一步则全错
+
+提出基于词袋的方案，生成词袋的顺序构成了文档标识符
+
+![image-20240527102221733](imgs/image-20240527102221733.png)
+
+##### 可学习的文档标识符 (renda)
+
+NOVO: Learnable and Interpretable Document Identifiers for Model-Based IR  CIKM 2023
+
+现有的文档ID基于Encoder独立完成，与Decoder无关，存在Gap，提出了一种可学习的文档标识符方案
+
+![image-20240527102858699](imgs/image-20240527102858699.png)
+
+##### 相关性强化的生成式检索模型 （renda）
+
+Enhancing Generative Retrieval with Reinforcement Learning from Relevance Feedback EMNLP 2023
+
+引入基于相关性反馈的强化学习来让模型理解相关性
+
+![image-20240527103051471](imgs/image-20240527103051471.png)
+
+##### 生成式检索与其他生成任务的融合 （renda）
+
+UniGen: A Unified Generative Framework for Retrieval and Question Answering with Large Language Models  AAAI 2024
+
+![image-20240527103209757](imgs/image-20240527103209757.png)
+
+##### CorpusLM (renda)
+
+CorpusLM: Towards a Unified Language Model on Corpus for Knowledge-Intensive Tasks  SIGIR 2024
+
+![image-20240527103302638](imgs/image-20240527103302638.png)
 
 
 
-## Report 3
+## Report 3 大模型时代的通用向量检索
 
-## Report 4
+北京智源研究院  刘政
 
-## Report 5
+### 01 什么是语义向量模型
+
+向量模型：将任意数据转化为高维空间中稠密向量的计算机模型
+
+重要属性：**向量相似性**要与**数据相似性**保持一致
+
+这里的相似性计算并不严格，不受三角不等式约束
+
+![image-20240527103615275](imgs/image-20240527103615275.png)
+
+向量模型应用：
+
+- 信息检索系统
+- 比较数据的语义关联，数据聚类去重等
+- 向量数据库：不再追求相似性最高的目标向量，近似最近邻计算节约开销
+
+### 02 向量学习的基本模式
+
+![image-20240527112225640](imgs/image-20240527112225640.png)
+
+#### 1. 训练数据
+
+#### 2. 模型
+
+![image-20240527112454548](imgs/image-20240527112454548.png)
+
+- 几乎所有的DNN模型都可以作为向量模型
+- 但真正让向量模型变得可用的是，以Transformer为基础的预训练模型，其本质是“大”
+- Transformer的网络架构可以做的足够大，让模型由足够的容量去建立强大的表达能力
+- 预训练的规模可以足够大，让模型充分学习海量数据中的知识
+
+##### 主流的预训练算法对向量检索而言是不是最优的？
+
+- 修改模型训练目标：让embedding直接体现在训练的优化之中
+- 优化embedding对输入文本语义的表达能力：先前的单个词的预测不合适，简单的转为预测目标文本的全部词汇
+
+基于此：提出RetroMAE
+
+RetroMAE: Pre-Training Retrieval-oriented Language Models Via Masked Auto-Encoder  EMNLP 2022
+
+- 从任意的无标签语料，比如Wikipedia中采样一段文本，将其编码成embedding之后再将其解码出原始的文本
+- 非对称的编码器解码器结构，非对称的掩码比率，使得模型输出的embedding可以更加充分的从训练数据中得到学习优化
+
+![image-20240527113712720](imgs/image-20240527113712720.png)
+
+
+
+#### 3. 训练算法
+
+### 03 BGE模型的开发与实践
+
+
+
+### 04 大语言模型与信息检索
+
+
+
+## Report 4 检索增强大模型技术探索与思考
+
+中国科学院计算技术研究所 庞亮
+
+### 01 检索视角下的检索增强
+
+
+
+### 02 大模型视角下的检索增强
+
+
+
+### 03 交互视角下的检索增强
+
+
+
+### 04 信息回路视角下的检索增强
+
+
+
+## Report 5  When Search Engine Meets LLMs: Opportunities and
+Challenges
+
+微软亚洲研究院  王亮
+
+### LLMs如何帮助现有的搜索技术栈
+
+
+
+### LLMs是强大的数据生成器
+
+
+
+### 搜索引擎如何增强LLMs
+
+
+
+### LLMs会取代搜索引擎么
+
+
+
+### 未来展望
+
+
 
 ## Report 6. LLM-Based Tool Learning and Autonomous Agents
+
+中国人民大学 高瓴人工智能学院 林衍凯
 
 Survey: Tool Learning with Foundation Models arXiv2304
 
@@ -709,3 +897,96 @@ Video PreTraining (VPT): Learning to Act by Watching Unlabeled Online Videos Neu
 
 ## Report 7. 工业界专场
 
+*百川 技术负责人 方琨*
+
+*智谱 解决方案专家 冯小平*
+
+*Jina AI 联合创始人兼CEO 王楠* 
+
+### 主要观点
+
+- 意图理解 
+  - 更多的去解读用户意图，适应用户意图
+  - 针对特定的应用场景，将大模型从通用$\rightarrow$专用
+- 大规模处理
+  - 近期GPT4出现连接云盘的接口，目前只能处理上传一个文件
+  - 但这是一个未来趋势，能够整合云盘中大量的结构化、非结构化数据
+- 企业的tool calling就绪度目前还差很多
+- 很多时候更加专注延迟等用户体验的指标
+
+### 企业大模型的一个简单框架
+
+![image-20240527093804005](imgs/image-20240527093804005.png)
+
+### 一个很好的样例：
+
+![image-20240527094009819](imgs/image-20240527094009819.png)
+
+#### Query改写
+
+![image-20240527094227419](imgs/image-20240527094227419.png)
+
+#### 等价Query：并行多查询
+
+![image-20240527094310111](imgs/image-20240527094310111.png)
+
+![image-20240527094322616](imgs/image-20240527094322616.png)
+
+#### 更抽象的Query：回撤
+
+![image-20240527094348297](imgs/image-20240527094348297.png)
+
+![image-20240527094400567](imgs/image-20240527094400567.png)
+
+#### 更具体的Query：任务分解
+
+![image-20240527094428556](C:/Users/bryce/AppData/Roaming/Typora/typora-user-images/image-20240527094428556.png)
+
+![image-20240527094512190](imgs/image-20240527094512190.png)
+
+#### 根据Query生成Document：HyDE
+
+使用查询到的文档+Query进行查询
+
+![image-20240527094607894](imgs/image-20240527094607894.png)
+
+![image-20240527094631113](imgs/image-20240527094631113.png)
+
+#### 路由控制器
+
+- 意图识别
+- 根据用户意图决定召回路径
+
+![image-20240527094950063](imgs/image-20240527094950063.png)
+
+![image-20240527095005866](imgs/image-20240527095005866.png)
+
+### Jina AI的RAG工具
+
+####  jina-embeddings-v2
+
+23.10发布，全球第一个支持8k输入长度的开源向量模型
+
+#### jina-colbert-v1
+
+第一款支持8k长度的colbert模型
+
+#### jina-reranker-v1
+
+基于jina bert v2 支持8k上下文输入
+
+#### jina-clip-v1
+
+正在开发...
+
+#### AIR-Bench
+
+自动化多样信息检索评测基准
+
+### 思考和讨论
+
+![image-20240527095543319](imgs/image-20240527095543319.png)
+
+**如果未来LLM能够精确的召回记忆，那么RAG将不再被需要**。
+
+![image-20240527095750548](imgs/image-20240527095750548.png)
