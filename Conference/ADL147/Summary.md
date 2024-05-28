@@ -356,7 +356,7 @@ INTERS: Unlocking the Power of Large Language Models in Search with Instruction 
 
 ### Part 2 检索增强的生成大模型
 
-#### 为什么要做检索增强？
+#### 1. 为什么要做检索增强？
 
 - 大模型并不完美  幻觉问题  知识缺陷  时效性问题
 
@@ -364,11 +364,11 @@ INTERS: Unlocking the Power of Large Language Models in Search with Instruction 
 
 ![image-20240525231319755](imgs/image-20240525231319755.png)
 
-#### RAG的基本框架
+#### 2. RAG的基本框架
 
 ![image-20240525231547537](imgs/image-20240525231547537.png)
 
-#### 何时需要检索？ --检索的必要性判定
+#### 3. 何时需要检索？ --检索的必要性判定
 
 ##### ACL24 SlimPLM 代理模型判定检索的必要性
 
@@ -388,7 +388,7 @@ Small Models, Big Insights: Leveraging Slim Proxy Models To Decide When and What
 
 ![image-20240525232322966](imgs/image-20240525232322966.png)
 
-#### 检索结果如何使用？ --精炼结果的方法
+#### 4. 检索结果如何使用？ --精炼结果的方法
 
 ##### ACL24 BIDER 为大模型精炼有效知识
 
@@ -404,7 +404,7 @@ BIDER: Bridging Knowledge Inconsistency for Efficient Retrieval-Augmented LLMs v
 
 ![image-20240525233105184](imgs/image-20240525233105184.png)
 
-#### 较长的结果如何建模？ --无切块长文本建模方法
+#### 5. 较长的结果如何建模？ --无切块长文本建模方法
 
 ##### ACL24 CFIC 建模更长的检索结果
 
@@ -423,7 +423,7 @@ Grounding Language Model with Chunking-Free In-Context Retrieval  ACL 2024
 
 ![image-20240525234026079](imgs/image-20240525234026079.png)
 
-#### 工具包
+#### 6. 工具包
 
 ##### arXiv24.5.24 FlashRAG 快速实现RAG方法工具包
 
@@ -446,9 +446,9 @@ FlashRAG: A Modular Toolkit for Efficient Retrieval-Augmented Generation Researc
 
 ![image-20240525234853516](imgs/image-20240525234853516.png)
 
-#### 数据集
+#### 7. 数据集
 
-#### WebBrain 面向RAG的通用数据集
+##### WebBrain 面向RAG的通用数据集
 
 WebBrain: Learning to Generate Factually Correct Articles for Queries by Grounding on Large Web Corpus arXiv2304
 
@@ -464,7 +464,7 @@ WebBrain: Learning to Generate Factually Correct Articles for Queries by Groundi
 
   ![image-20240525235636953](imgs/image-20240525235636953.png)
 
-#### DomainRAG 特定领域RAG评测
+##### DomainRAG 特定领域RAG评测
 
 DomainRAG: A Chinese Benchmark for Evaluating Domain-specific Retrieval-Augmented Generation  ACL 2024、
 
@@ -481,7 +481,7 @@ DomainRAG: A Chinese Benchmark for Evaluating Domain-specific Retrieval-Augmente
 
   ![image-20240526000350164](imgs/image-20240526000350164.png)
 
-### Future Work
+#### 8. Future Work
 
 - 更加精准的查询分解与改写
 - 对话式RAG的进一步探索
@@ -501,7 +501,7 @@ From Matching to Generation: A Survey on Generative Information Retrieval  arXiv
 
 ![image-20240527100304250](imgs/image-20240527100304250.png)
 
-#### 生成式检索模型目前面临的问题
+#### 1. 生成式检索模型目前面临的问题
 
 ![image-20240527100758594](imgs/image-20240527100758594.png)
 
@@ -523,7 +523,7 @@ From Matching to Generation: A Survey on Generative Information Retrieval  arXiv
 
 - 如何通过查询到的文档高效的生成答案
 
-#### 经典工作
+#### 2. 经典工作
 
 ##### DSI (Google)
 
@@ -778,42 +778,138 @@ Grounding Language Model with Chunking-Free In-Context Retrieval  ACL 2024
 
 中国科学院计算技术研究所 庞亮
 
-![image-20240528115228871](C:/Users/Bryce/AppData/Roaming/Typora/typora-user-images/image-20240528115228871.png)
+![image-20240528115228871](imgs/image-20240528115228871.png)
+
+目前面临的核心问题：
+
+- 不能准确的获得知识 （检索视角）
+- 不能准确的选择知识 （大模型视角）
+- 知识之间的干扰 （交互视角）
+
+从四个角度介绍计算所近期的工作
 
 ### 01 检索视角下的检索增强
 
+什么是适合大语言模型的检索增强的信息检索？
 
+- 应用范围广，任务种类多，对跨领域跨任务泛化性要求高
+- 推理开销大，上下文空间有限，对排序精度和鲁棒性要求高
+
+研究现状：
+
+![image-20240528134035025](imgs/image-20240528134035025.png)
+
+#### BERM：训练匹配的平衡可提取表示提高密集检索的泛化能力
+
+BERM: Training the Balanced and Extractable Representation for Matching to Improve Generalization Ability of Dense Retrieval  ACL 2023
+
+- 动机： 大部分稠密向量检索算法效果再数据集之外的场景泛化性能非常差
+
+![image-20240528134517286](imgs/image-20240528134517286.png)
+
+- 提出了匹配表示概念
+- 提出了可泛化的稠密向量检索模型再训练时的两个要求
+
+![image-20240528134615013](imgs/image-20240528134615013.png)
+
+#### Match-Prompt：通过提示学习提高神经文本匹配的多任务泛化能力
+
+Match-Prompt: Improving Multi-task Generalization Ability for Neural Text Matching via Prompt Learning  CIKM 2022
+
+![image-20240528134856756](imgs/image-20240528134856756.png)
+
+![image-20240528134925696](imgs/image-20240528134925696.png)
+
+#### NIR-Prompt：多任务可泛化神经信息检索训练框架
+
+NIR-Prompt: A Multi-task Generalized Neural Information Retrieval Training Framework  ACM Transactions on Information Systems 2023
+
+![image-20240528135213384](imgs/image-20240528135213384.png)
+
+#### GenRT：检索增强生成的列表感知重排序-阶段联合模型
+
+List-aware Reranking-Truncation Joint Model for Search and Retrieval-augmented Generation  WWW 2024
+
+![image-20240528135241409](imgs/image-20240528135241409.png)
 
 ### 02 大模型视角下的检索增强
 
+大模型如何鲁棒的对抗输入的噪音知识，并在参数内外知识之间做出选择
 
+- 有监督指令微调：在领域特定数据集上构造检索-问题-答案三元组，利用构造的有监督三元组进行指令微调，教会大模型如何使用检索到的文档
+- 强化学习：强化学习对齐大语言模型在使用检索文档上的偏好
+- 模型蒸馏：使用更强大的模型作为教师模型微调生成器
+- 生成器与检索器协同微调：最小化检索器分布于与LLM偏好之间的KL散度以及最大化给定检索增强指令情况下正确答案的可能性
+
+#### Info-RAG：用于检索增强生成的大型语言模型的无监督信息细化训练
+
+Unsupervised Information Refinement Training of Large Language Models for Retrieval-Augmented Generation  ACL 2024
+
+![image-20240528140241985](imgs/image-20240528140241985.png)
 
 ### 03 交互视角下的检索增强
 
+大模型与信息检索如何高效交互从而鲁棒的解决复杂问题？
 
+交互框架：
+
+- 基于工具调用 ToolFormer
+- 基于复杂问题分解  Self-Ask  DSP
+
+#### Search-in-the-Chain: 面向知识密集型任务的交互式检索增强大型语言模型
+
+Search-in-the-Chain: Interactively Enhancing Large Language Models with Search for Knowledge-intensive Tasks  WWW  2024
+
+![image-20240528140802334](imgs/image-20240528140802334.png)
+
+在面对复杂的需要多跳知识密集型的问题时，现存的检索增强的交互框架存在以下问题：
+
+- 检索与大模型的交互打破了大模型连贯的推理链，使其在每次推理时仅能解决“局部”节点的问题。
+- 在每个节点都直接将文档提供给大模型，存在误导大模型的风险，也增加的大模型的推理开销。
+- 推理的方向不能动态调整，且输出的内容无法溯源，缺乏可验证性。
+
+![image-20240528140916368](imgs/image-20240528140916368.png)
 
 ### 04 信息回路视角下的检索增强
 
+大模型生成的内容被混入检索的语料库时，将如何影响信息检索的表现？
+
+![image-20240528141017768](imgs/image-20240528141017768.png)
+
+#### 大语言模型可能主导信息获取：神经检索器偏向大语言模型生成的文本
+
+LLMs may Dominate Information Access: Neural Retrievers are Biased Towards LLM-Generated Texts  KDD 2024
+
+利用改写的方式把真实语料库中的文本转化成大模型生成的文本，并将真实文本和生成的文本混合做为评测基准
+
+![image-20240528141531077](imgs/image-20240528141531077.png)
 
 
-## Report 5  When Search Engine Meets LLMs: Opportunities and
-Challenges
 
+#### 看不见的相关性偏差：文本图像检索模型更喜欢人工智能生成的图像
+
+Invisible Relevance Bias: Text-Image Retrieval Models Prefer AI-Generated Images  SIGIR 2024
+
+采用先过采样生成，后筛选的策略，选择和真实图片语义最一致的生成图片
+
+![image-20240528141639718](imgs/image-20240528141639718.png)
+
+## Report 5  When Search Engine Meets LLMs: Opportunities and Challenges
 微软亚洲研究院  王亮
 
-### LLMs如何帮助现有的搜索技术栈
+### 01 LLMs如何帮助现有的搜索技术栈
 
 
 
-### LLMs是强大的数据生成器
+### 02 LLMs是强大的数据生成器
 
 
 
-### 搜索引擎如何增强LLMs
+### 03 搜索引擎如何增强LLMs
 
 
 
-### LLMs会取代搜索引擎么
+### 04 LLMs会取代搜索引擎么
 
 
 
