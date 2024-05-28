@@ -899,23 +899,245 @@ Invisible Relevance Bias: Text-Image Retrieval Models Prefer AI-Generated Images
 
 ### 01 LLMs如何帮助现有的搜索技术栈
 
+**信息检索最根本的问题是表示学习**
+
+**表征学习最重要的是尺度定律[openai 2020]**
+
+![image-20240528160954077](imgs/image-20240528160954077.png)
+
+![image-20240528161006955](imgs/image-20240528161006955.png)
+
+#### 1. Generative Retrieval 生成式检索
+
+##### Differentiable Search Index (DSI)
+
+Transformer Memory as a Differentiable Search Index, 2022
+
+![image-20240528154438387](imgs/image-20240528154438387.png)
+
+##### Generative Retrieval - SEAL
+
+Autoregressive Search Engines: Generating Substrings as Document Identifiers, 2022
+
+![image-20240528154500926](imgs/image-20240528154500926.png)
+
+##### Limitations of Generative Retrieval
+
+How Does Generative Retrieval Scale to Millions of Passages?, 2023
+
+![image-20240528154614482](imgs/image-20240528154614482.png)
+
+#### 2. Embedding-based Dense Retrieval 基于向量模型的密集检索 
+
+![image-20240528155437686](imgs/image-20240528155437686.png)
+
+如何增强密集检索？
+
+![image-20240528155631344](imgs/image-20240528155631344.png)
+
+ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT, 2020 
+
+RocketQA: An Optimized Training Approach to Dense Passage Retrieval for Open-Domain Question Answering, 2020 
+
+Approximate Nearest Neighbor Negative Contrastive Learning for Dense Text Retrieval, 2020 
+
+Adversarial Retriever-Ranker for dense text retrieval, 2021 
+
+Text Embeddings by Weakly-Supervised Contrastive Pre-training, 2022
+
+SimLM: Pre-training with Representation Bottleneck for Dense Passage Retrieval, 2022 
+
+RetroMAE: Pre-Training Retrieval-oriented Language Models Via Masked Auto-Encoder, 2022
+
+##### Knowledge distillation from re-ranker
+
+RocketQAv2: A Joint Training Method for Dense Passage Retrieval and Passage Re-ranking, 2021
+
+![image-20240528155856521](imgs/image-20240528155856521.png)
+
+##### Continual pre-training 
+
+SimLM: Pre-training with Representation Bottleneck for Dense Passage Retrieval, 2022
+
+![image-20240528155929871](imgs/image-20240528155929871.png)
+
+Text Embeddings by Weakly-Supervised Contrastive Pre-training, 2022
+
+![image-20240528155957780](imgs/image-20240528155957780.png)
+
+##### The Importance of Large Batch Size
+
+Text Embeddings by Weakly-Supervised Contrastive Pre-training, 2022
+
+![image-20240528160057200](imgs/image-20240528160057200.png)
+
+##### GradCache
+
+Scaling deep contrastive learning batch size under memory limited setup, 2021
+
+![image-20240528160118452](imgs/image-20240528160118452.png)
+
+![image-20240528160135248](imgs/image-20240528160135248.png)
+
+#### 3. LLMs + IR 大语言模型+信息检索
+
+##### RankLLaMA
+
+Fine-Tuning LLaMA for Multi-Stage Text Retrieval, 2023
+
+![image-20240528161115573](imgs/image-20240528161115573.png)
+
+##### SGPT
+
+SGPT: GPT sentence embeddings for semantic search, 2022
+
+![image-20240528161143463](imgs/image-20240528161143463.png)
+
+##### E5 Mistral
+
+Improving text embeddings with large language models, 2024
+
+##### GritLM: Unifying Text Generation and Embeddings
+
+Generative representational instruction tuning, 2024
+
+#### 4. Challenges to Deploy LLM-based Embeddings 部署基于LLM的向量模型的挑战
+
+- 推理成本
+  - 半精度推理
+  - 更好的推理实现 （FlashAttention-2）
+  - 蒸馏到更小的模型
+- 存储成本
+  - 向量量化
+
+##### Matryoshka Embeddings
+
+Matryoshka Representation Learning, 2022
+
+![image-20240528161706588](imgs/image-20240528161706588.png)
 
 
-### 02 LLMs是强大的数据生成器
 
+### 02 搜索引擎如何增强LLMs
 
+LLMs的缺点：
 
-### 03 搜索引擎如何增强LLMs
+- 无法获取最新事件
+- 缺乏专业领域知识
+- 微调注入新知识困难
 
+#### 1. Rag Pipeline
 
+![image-20240528162041546](imgs/image-20240528162041546.png)
 
-### 04 LLMs会取代搜索引擎么
+##### KNN-LM
 
+Generalization through Memorization: Nearest Neighbor Language Models, 2019
 
+![image-20240528162115789](imgs/image-20240528162115789.png)
 
-### 未来展望
+##### RETRO
 
+Improving language models by retrieving from trillions of tokens, 2021
 
+![image-20240528162143435](imgs/image-20240528162143435.png)
+
+##### REPLUG
+
+Replug: Retrieval-augmented black-box language models, 2023
+
+![image-20240528162206955](imgs/image-20240528162206955.png)
+
+#### 2. RAG Agent
+
+##### WebGPT
+
+WebGPT: Browser-assisted question-answering with human feedback, 2021
+
+![image-20240528162821018](imgs/image-20240528162821018.png)
+
+##### Self-RAG
+
+Self-RAG: Learning to retrieve, generate, and critique through self-reflection, 2023
+
+![image-20240528162855349](imgs/image-20240528162855349.png)
+
+#### 3. RAG 与长上下文LLMs
+
+##### Fusion-in Decoder (FiD)
+
+Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering, 2020
+
+![image-20240528163006167](imgs/image-20240528163006167.png)
+
+##### Position Interpolation
+
+Extending context window of large language models via positional interpolation, 2023
+
+![image-20240528163028450](imgs/image-20240528163028450.png)
+
+##### PoSE
+
+Pose: Efficient context window extension of llms via positional skip-wise training, 2023
+
+![image-20240528163046285](imgs/image-20240528163046285.png)
+
+#### 4. 面临挑战
+
+##### 长上下文理解
+
+Lost in the middle: How language models use long contexts, 2023
+
+![image-20240528163154265](imgs/image-20240528163154265.png)
+
+##### 推理效率
+
+Inference with reference: Lossless acceleration of large language models, 2023
+
+![image-20240528163211080](imgs/image-20240528163211080.png)
+
+##### 来源归属
+
+Evaluating verifiability in generative search engines, 2023
+
+![image-20240528163243718](imgs/image-20240528163243718.png)
+
+### 03 LLMs会取代搜索引擎么
+
+目前的障碍：
+
+- 高效持续的学习新知识
+- 幻觉问题
+- 推理的成本和延迟
+
+#### 谷歌的一项提案
+
+Rethinking Search: Making Domain Experts out of Dilettantes, 2021
+
+![image-20240528163326785](imgs/image-20240528163326785.png)
+
+#### Large Search Model 微软的提案
+
+Large Search Model: Redefining Search Stack in the Era of LLMs, 2023
+
+![image-20240528163403763](imgs/image-20240528163403763.png)
+
+### 04  结论
+
+####  LLMs如何帮助现有的搜索技术栈？
+
+- 生成式检索
+- 利用LLM进行文本检索和排名
+- 多角度进行数据合成
+
+####  搜索引擎如何增强LLMs？
+
+- 检索增强生成
+- 具有检索功能的Agent
+
+#### LLMs会取代搜索引擎么
+
+- 在可预见的未来中，LLM和搜索引擎可能s
 
 ## Report 6. LLM-Based Tool Learning and Autonomous Agents
 
