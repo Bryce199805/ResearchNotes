@@ -36,6 +36,14 @@ $$
 $$
 其中l为分解水平，当l=1时，特征图$F\in\R^{C\times H\times W}$能够分解为4个频带，$\mathcal{B}_1 = \{LL, HL, LH, HH\}$，其中LL白哦是低频带($R_{LL}\in\R^{C\times H_{LL}\times W_{LL}}$)，其余为好拼带。l取2时，LL频带可以进一步分解为LL2, HL2, LH2, HH2。本文我们设置l=3.
 
+（低频部分代表了趋势，也叫**近似信号**；高频部分代表了噪声，也叫**细节信号**）
+
+**补充知识：** [refs](https://www.cnblogs.com/pam-sh/p/14534453.html)
+
+LL频带（A）是图像内容的缩略图，保持了原图的内容信息；LH频带（V）含有水平方向的高频边缘信息；HL频带（H）还有竖直方向的高频边缘信息，HH频带（D）含有对角方向的高频边缘信息，反映了水平和竖直方向上图像灰度的综合变化。
+
+![image-20240602205222794](imgs/image-20240602205222794.png)
+
 $F^{(t)}\in\R^{C\times H\times W}, F^{(s)}\in\R^{C_s\times H\times W}$分别表示师生模型的特征图，为了模仿频率带我们提出：
 $$
 \mathcal{L}_{FKD} = \sum^L_{k=1}||a_k - b_k||_1 \\
