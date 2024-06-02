@@ -657,7 +657,7 @@ RetroMAE: Pre-Training Retrieval-oriented Language Models Via Masked Auto-Encode
 
 **讲者观点是训练数据和模型的重要性要高于训练算法，尽管训练算法也同样重要**
 
-向量学习寻来你算法的基本形式是对比学习，我们可以进行优化的自由度只有两个：正样本和负样本
+向量学习训练算法的基本形式是对比学习，我们可以进行优化的自由度只有两个：正样本和负样本
 
 ![image-20240528103806433](imgs/image-20240528103806433.png)
 
