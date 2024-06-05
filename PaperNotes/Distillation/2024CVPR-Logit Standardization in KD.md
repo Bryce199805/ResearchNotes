@@ -111,7 +111,7 @@ $$
 $$
 \frac{\frac{1}{K}\sum^K_{i=1}(z_n^{(i)} - \overline{z}_n)^2}{\frac{1}{K}\sum^K_{i=1}(v_n^{(i)} - \overline{v}_n)^2} = \frac{b_S^2}{b_T^2} = \frac{\sigma(z_n)^2}{\sigma(v_n)^2}
 $$
-其中$\sigma$为标准差，因此我们可以从logit便宜和方差匹配获得一个好的学生的特性
+其中$\sigma$为标准差，因此我们可以从logit偏移和方差匹配获得一个好的学生的特性
 
 #### Logit Shift
 
@@ -123,7 +123,7 @@ $$
 
 ### Logit Standardization
 
-因此为了打破这两个舒服，我们将超参数$a_S, b_S$分别设为其logits的均值和标准差：
+因此为了打破这两个束缚，我们将超参数$a_S, b_S$分别设为其logits的均值和标准差：
 $$
 q(z_n;\overline{z}_n, \sigma(z_n))^{(k)} = \frac{exp[\mathcal{Z}(z_n;\tau)^{(k)}]}{\sum^K_{m=1}exp[\mathcal{Z}(z_n;\tau)^{(m)}]}
 $$

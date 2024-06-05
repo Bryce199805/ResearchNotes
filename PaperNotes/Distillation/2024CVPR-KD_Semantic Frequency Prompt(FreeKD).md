@@ -34,7 +34,7 @@ $$
 $$
 \mathcal{B}_l = \xi(x)
 $$
-其中l为分解水平，当l=1时，特征图$F\in\R^{C\times H\times W}$能够分解为4个频带，$\mathcal{B}_1 = \{LL, HL, LH, HH\}$，其中LL白哦是低频带($R_{LL}\in\R^{C\times H_{LL}\times W_{LL}}$)，其余为好拼带。l取2时，LL频带可以进一步分解为LL2, HL2, LH2, HH2。本文我们设置l=3.
+其中l为分解水平，当l=1时，特征图$F\in\R^{C\times H\times W}$能够分解为4个频带，$\mathcal{B}_1 = \{LL, HL, LH, HH\}$，其中LL表示低频带($R_{LL}\in\R^{C\times H_{LL}\times W_{LL}}$)，其余为高频带。l取2时，LL频带可以进一步分解为LL2, HL2, LH2, HH2。本文我们设置l=3.
 
 （低频部分代表了趋势，也叫**近似信号**；高频部分代表了噪声，也叫**细节信号**）
 
@@ -49,7 +49,7 @@ $$
 \mathcal{L}_{FKD} = \sum^L_{k=1}||a_k - b_k||_1 \\
 a_k \in \xi(F^{(t)}), b_k \in \xi(\phi(F^{(s)}))
 $$
-L为频带数，$\phi$为线性投影层，使师生特征图分辨率对齐，学生模型通过低频模型学习一些一半规律，从高频学习显著模式，包括精细纹理、边缘和噪声
+L为频带数，$\phi$为线性投影层，使师生特征图分辨率对齐，学生模型通过低频模型学习一些一般规律，从高频学习显著模式，包括精细纹理、边缘和噪声
 
 ### Semantic Frequency Prompt
 

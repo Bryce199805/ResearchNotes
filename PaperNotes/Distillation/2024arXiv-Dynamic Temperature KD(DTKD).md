@@ -67,7 +67,7 @@ $$
 $$
 |\frac{u}{\tau+\delta} - \frac{v}{\tau-\delta}|_{max} = 0 \tag{4}
 $$
-令$|u|_{max}=x, |v|_{max}=y$，有：**(WHY? 为什么这里直接去u v的最大值计算$\delta$)**
+令$|u|_{max}=x, |v|_{max}=y$，有：**(WHY? 为什么这里直接取u v的最大值计算$\delta$)**
 $$
 \delta = \frac{x-y}{x+y} \tau \tag{5}
 $$
