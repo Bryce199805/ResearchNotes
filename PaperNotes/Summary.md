@@ -66,27 +66,40 @@ When does label smoothing help?
 | 27   | 2022         | CVPR          | Knowledge Distillation via the Target-aware Transformer (TaT) | <li> 针对特征图语义不匹配问题提出TaT，利用教师特征对学生语义特征进行重建<br><li> 针对大特征图提出分组蒸馏和锚点蒸馏<br><li> 分组得到局部特征，锚点蒸馏得到全局特征 | 中间层<br>                       |
 | 28   | 2023         | CVPR          | DisWOT: Student Architecture Search for Distillation Without Training | <li> 提出基于NAS的学生模型搜索策略<br><li>考虑类别样本之间的相似性，获得最佳学生模型 | 中间层<br>NAS                    |
 | 29   | 2023         | CVPR          | Class Attention Transfer Based Knowledge Distillation        | <li> 提出类别注意力转换调整类别注意力图生成位置<br><li> 按照类别生成类别注意力图，更具有可解释性 | 中间层<br>可解释性               |
+| 30   | 2024         | CVPR          | FreeKD: Knowledge Distillation via Semantic Frequency Prompt | <li>首次在蒸馏学习中利用频率域的知识<br><li>提出使用Prompt微调教师模型引入频率域知识<br><li>提出利用连续两层之间的相关矩阵作为频率损失的权重 | 中间层<br>频率域                 |
+|      |              |               |                                                              |                                                              |                                  |
+|      |              |               |                                                              |                                                              |                                  |
+|      |              |               |                                                              |                                                              |                                  |
+|      |              |               |                                                              |                                                              |                                  |
+|      |              |               |                                                              |                                                              |                                  |
+|      |              |               |                                                              |                                                              |                                  |
+
+
 
 ## Optimization
 
-| 序号 | 年份 | 出处    | 题目                                                         | 关键点                                                       | 目标                          |
-| ---- | ---- | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------- |
-| 1    | 2019 | ICCV    | On the Efficacy of Knowledge Distillation                    | <li> 大量实验说明<br><li> 蒸馏损失后期会损害模型训练<br><li> 提出提前停止 | 蒸馏训练优化                  |
-| 2    | 2020 | AAAI    | Improved Knowledge Distillation via Teacher Assistant (TAKD) | <li> 师生差距过大会导致学生模型性能下降<br><li> 引入助教帮助学生模型学习，弥合性能差距 | 蒸馏流程<br>师生差距          |
-| 3    | 2020 | CVPR    | Revisiting Knowledge Distillation via Label Smoothing Regularization | <li> 大量实验说明<br><li> 较弱的学生去教授老师，训练不佳的老师教授比他性能更好的学生，都能带来性能提升<br><li> 暗知识不仅包括类别之间的相似性，还包括对学生培训的正则化<br><li> 分析KD与标签平滑之间的关系，提出Tf-KD | 蒸馏与标签平滑                |
-| 4    | 2021 | ICLR    | UnDistillable: Making A Nasty Teacher That Cannot Teach Students | <li> 引入对抗性思想保护模型<br><li> 最大化教师模型与预训练模型的KL散度来尽可能的获得释放错误信号的能力<br><li> 通过交叉熵保证教师模型本身的正确率 | 蒸馏保护<br>                  |
-| 5    | 2021 | NeurIPS | Does Knowledge Distillation Really Work?                     | <li> 大量实验说明<br><li> 从多个角度实验验证问题所在<br><li> 最终认定是优化方法限制了模型收敛 | 蒸馏不佳原因<br>蒸馏优化      |
-| 6    | 2022 | CVPR    | Decoupled Knowledge Distillation                             | <li> 传统logits蒸馏性能不佳是优于某些因素耦合<br><li> 提出解耦方案，分为针对目标类的二元蒸馏和针对非目标类的多类别蒸馏 | logits蒸馏<br>优化解耦        |
-| 7    | 2022 | CVPR    | Self-Distillation from the Last Mini-Batch for Consistency Regularization | <li> 处理先前自蒸馏方法即时信息丢失、额外内存消耗、并行化程度低<br><li> 提出最后一个小批量自蒸馏DLB，只存储上一批次数据产生的软标签 | 蒸馏训练优化                  |
-| 8    | 2022 | ECCV    | A Fast Knowledge Distillation Framework for Visual Recognition (FKD) | <li> 针对蒸馏训练需要额外对教师模型推理引入额外开销<br><li> 在教师模型推理阶段保存数据增强及输出结果在训练学生时复用 | 蒸馏训练优化<br>教师推理开销  |
-| 9    | 2022 | ECCV    | Knowledge Condensation Distillation (KCD)                    | <li> 认为对全部知识蒸馏是冗余的<br><li> 提出在线全局价值估计每个知识点的价值<br><li> 将知识点分为强中弱三个档次分别处理 | 蒸馏训练优化<br>知识筛选      |
-| 10   | 2022 | NeurIPS | Knowledge Distillation from A Stronger Teacher               | <li> 学生应当更关注教师输出的相对排名而不是确切概率<br><li> 提出类内相似性和类间相似性<br><li> 提出使用皮尔森距离作为新的距离度量 | 蒸馏度量优化                  |
-| 11   | 2023 | AAAI    | Curriculum Temperature for Knowledge Distillation (CTKD)     | <li> 教育应当遵循由易到难的过程，提出使用温度系数调整任务难度 <br><li> 提出使用GAN的思想学习温度系数<br><li> 给出了两种可学习温度模块 | 蒸馏训练优化<br>温度系数学习  |
-| 12   | 2023 | CVPR    | Generalization Matters: Loss Minima Flattening via Parameter Hybridization for Efficient Online Knowledge Distillation | <li> 在线知识蒸馏，寻找平坦最优解<br><li> 提出混合权重模型HWM<br><li> 提出融合策略按照计划利用混合模型更新学生模型 | 蒸馏泛化性<br>平坦最优解      |
-| 13   | 2023 | ICCV    | Automated Knowledge Distillation via Monte Carlo Tree Search | <li> 总结先前工作提出一个搜索空间<br><li> 通过蒙特卡洛树搜索寻找最佳蒸馏策略<br><li> 提出离线推理、随机掩码稀疏蒸馏、提前停止来加速搜索 | 最佳蒸馏方案搜索              |
-| 14   | 2023 | ICCV    | DOT: A Distillation-Oriented Trainer                         | <li> 认为任务损失与蒸馏损失发生冲突，退化为多任务学习<br><li> 调整优化器动量值让蒸馏损失占据主导 | 蒸馏训练优化<br>损失冲突      |
-| 15   | 2023 | ICCV    | FerKD: Surgical Label Adaptation for Efficient Distillation  | <li> 针对蒸馏训练教师模型的额外开销问题，FKD的问题<br><li> 提出自适应标签校正，丢弃非常简单的和非常困难的样本，重点优化剩余样本<br><li> 提出一种新的增强方法 | 蒸馏训练优化<br/>教师推理开销 |
-| 16   | 2023 | ICCV    | ORC: Network Group-based Knowledge Distillation using Online Role Change | <li> 提出分组教学框架处理教师将错误知识传递给学生的问题<br><li> 提出强化教学针对学生觉得困难的样本<br><li>提出私人教学更新学生模型中最好的模型<br><li> 提出组教学让教师和最好的学生教授剩余模型 | 蒸馏训练优化<br>减少错误传递  |
+| 序号 | 年份 | 出处    | 题目                                                         | 关键点                                                       | 目标                                 |
+| ---- | ---- | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------ |
+| 1    | 2019 | ICCV    | On the Efficacy of Knowledge Distillation                    | <li> 大量实验说明<br><li> 蒸馏损失后期会损害模型训练<br><li> 提出提前停止 | 蒸馏训练优化                         |
+| 2    | 2020 | AAAI    | Improved Knowledge Distillation via Teacher Assistant (TAKD) | <li> 师生差距过大会导致学生模型性能下降<br><li> 引入助教帮助学生模型学习，弥合性能差距 | 蒸馏流程<br>师生差距                 |
+| 3    | 2020 | CVPR    | Revisiting Knowledge Distillation via Label Smoothing Regularization | <li> 大量实验说明<br><li> 较弱的学生去教授老师，训练不佳的老师教授比他性能更好的学生，都能带来性能提升<br><li> 暗知识不仅包括类别之间的相似性，还包括对学生培训的正则化<br><li> 分析KD与标签平滑之间的关系，提出Tf-KD | 蒸馏与标签平滑                       |
+| 4    | 2021 | ICLR    | UnDistillable: Making A Nasty Teacher That Cannot Teach Students | <li> 引入对抗性思想保护模型<br><li> 最大化教师模型与预训练模型的KL散度来尽可能的获得释放错误信号的能力<br><li> 通过交叉熵保证教师模型本身的正确率 | 蒸馏保护<br>                         |
+| 5    | 2021 | NeurIPS | Does Knowledge Distillation Really Work?                     | <li> 大量实验说明<br><li> 从多个角度实验验证问题所在<br><li> 最终认定是优化方法限制了模型收敛 | 蒸馏不佳原因<br>蒸馏优化             |
+|      | 2021 | ACL     | Annealing Knowledge Distillation                             | <li>第一阶段提出一个退火蒸馏损失来模仿教师，用MSE取代KL散度，并通过退火函数定义动态温度<br><li>第二阶段通过交叉熵使用硬标签来对学生模型微调 | 温度系数<br>师生差距                 |
+| 6    | 2022 | CVPR    | Decoupled Knowledge Distillation                             | <li> 传统logits蒸馏性能不佳是优于某些因素耦合<br><li> 提出解耦方案，分为针对目标类的二元蒸馏和针对非目标类的多类别蒸馏 | logits蒸馏<br>优化解耦               |
+| 7    | 2022 | CVPR    | Self-Distillation from the Last Mini-Batch for Consistency Regularization | <li> 处理先前自蒸馏方法即时信息丢失、额外内存消耗、并行化程度低<br><li> 提出最后一个小批量自蒸馏DLB，只存储上一批次数据产生的软标签 | 蒸馏训练优化                         |
+| 8    | 2022 | ECCV    | A Fast Knowledge Distillation Framework for Visual Recognition (FKD) | <li> 针对蒸馏训练需要额外对教师模型推理引入额外开销<br><li> 在教师模型推理阶段保存数据增强及输出结果在训练学生时复用 | 蒸馏训练优化<br>教师推理开销         |
+| 9    | 2022 | ECCV    | Knowledge Condensation Distillation (KCD)                    | <li> 认为对全部知识蒸馏是冗余的<br><li> 提出在线全局价值估计每个知识点的价值<br><li> 将知识点分为强中弱三个档次分别处理 | 蒸馏训练优化<br>知识筛选             |
+| 10   | 2022 | NeurIPS | Knowledge Distillation from A Stronger Teacher               | <li> 学生应当更关注教师输出的相对排名而不是确切概率<br><li> 提出类内相似性和类间相似性<br><li> 提出使用皮尔森距离作为新的距离度量 | 蒸馏度量优化                         |
+| 11   | 2023 | AAAI    | Curriculum Temperature for Knowledge Distillation (CTKD)     | <li> 教育应当遵循由易到难的过程，提出使用温度系数调整任务难度 <br><li> 提出使用GAN的思想学习温度系数<br><li> 给出了两种可学习温度模块 | 蒸馏训练优化<br>温度系数学习         |
+| 12   | 2023 | CVPR    | Generalization Matters: Loss Minima Flattening via Parameter Hybridization for Efficient Online Knowledge Distillation | <li> 在线知识蒸馏，寻找平坦最优解<br><li> 提出混合权重模型HWM<br><li> 提出融合策略按照计划利用混合模型更新学生模型 | 蒸馏泛化性<br>平坦最优解             |
+| 13   | 2023 | ICCV    | Automated Knowledge Distillation via Monte Carlo Tree Search | <li> 总结先前工作提出一个搜索空间<br><li> 通过蒙特卡洛树搜索寻找最佳蒸馏策略<br><li> 提出离线推理、随机掩码稀疏蒸馏、提前停止来加速搜索 | 最佳蒸馏方案搜索                     |
+| 14   | 2023 | ICCV    | DOT: A Distillation-Oriented Trainer                         | <li> 认为任务损失与蒸馏损失发生冲突，退化为多任务学习<br><li> 调整优化器动量值让蒸馏损失占据主导 | 蒸馏训练优化<br>损失冲突             |
+| 15   | 2023 | ICCV    | FerKD: Surgical Label Adaptation for Efficient Distillation  | <li> 针对蒸馏训练教师模型的额外开销问题，FKD的问题<br><li> 提出自适应标签校正，丢弃非常简单的和非常困难的样本，重点优化剩余样本<br><li> 提出一种新的增强方法 | 蒸馏训练优化<br/>教师推理开销        |
+| 16   | 2023 | ICCV    | ORC: Network Group-based Knowledge Distillation using Online Role Change | <li> 提出分组教学框架处理教师将错误知识传递给学生的问题<br><li> 提出强化教学针对学生觉得困难的样本<br><li>提出私人教学更新学生模型中最好的模型<br><li> 提出组教学让教师和最好的学生教授剩余模型 | 蒸馏训练优化<br>减少错误传递         |
+|      | 2023 | arXiv   | Norm KD: Normalized Logits for Knowledge Distillation        | <li> 认为固定单一的温度不足以软化不同的样本<br><li> 提出将样本输出logits视为高斯分布，将其标准化后的结果相当于利用其标准差作为温度系数<br><li>在标准化温度系数中引入一个缩放因子来调整分布 | 温度系数                             |
+|      | 2024 | arXiv   | Dynamic Temperature Knowledge Distillation                   | <li>提出使用logsumexp函数来评价logits的平滑度，通过调节温度系数使得师生模型logit之间的平滑度差异最小<br><li>设定一个相同的初始温度，尖锐度较大的教师温度设为$\tau+\delta$，尖锐度较小的教师温度设为$\tau-\delta$<br><li>能够很好的与其他方法结合 | 温度系数<br>师生差距<br>任务难度调整 |
+|      | 2024 | CVPR    | Logit Standardization in Knowledge Distillation              | <li> 从信息论的最大熵理论利用拉格朗日乘子法推导的温度系数<br><li>传统KD会迫使学生模型模仿教师模型的偏移量标准差<br><li> 提出利用样本均值标准差进行标准化来发挥温度系数的作用 | 温度系数<br>信息论角度推导           |
 
 ## 大模型蒸馏
 
