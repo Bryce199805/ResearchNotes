@@ -67,6 +67,7 @@ When does label smoothing help?
 | 27   | 2022         | CVPR          | Knowledge Distillation via the Target-aware Transformer (TaT) | <li> 针对特征图语义不匹配问题提出TaT，利用教师特征对学生语义特征进行重建<br><li> 针对大特征图提出分组蒸馏和锚点蒸馏<br><li> 分组得到局部特征，锚点蒸馏得到全局特征 | 中间层<br>                       |
 | 28   | 2023         | CVPR          | DisWOT: Student Architecture Search for Distillation Without Training | <li> 提出基于NAS的学生模型搜索策略<br><li>考虑类别样本之间的相似性，获得最佳学生模型 | 中间层<br>NAS                    |
 | 29   | 2023         | CVPR          | Class Attention Transfer Based Knowledge Distillation        | <li> 提出类别注意力转换调整类别注意力图生成位置<br><li> 按照类别生成类别注意力图，更具有可解释性 | 中间层<br>可解释性               |
+|      | 2023         | ICCV          | Masked AutoEncoders Are Stronger Knowledge Distillers        | <li> 基于特征的KD方法重要知识被简单样本所压制导致学生很难学习到有效知识<br><li> 提出使用掩码图像建模机制，屏蔽图像块强制学生学习教师输出恢复缺失的特征<br><li> 提出空间对齐模块SAM、Transformer解码器和空间恢复模块SRM来完成师生模型特征的对齐并重建掩码 | 中间特征<br>MIM                  |
 | 30   | 2024         | CVPR          | FreeKD: Knowledge Distillation via Semantic Frequency Prompt | <li>首次在蒸馏学习中利用频率域的知识<br><li>提出使用Prompt微调教师模型引入频率域知识<br><li>提出利用连续两层之间的相关矩阵作为频率损失的权重 | 中间层<br>频率域                 |
 |      |              |               |                                                              |                                                              |                                  |
 |      |              |               |                                                              |                                                              |                                  |
@@ -92,6 +93,7 @@ When does label smoothing help?
 | 7    | 2022 | CVPR    | Self-Distillation from the Last Mini-Batch for Consistency Regularization | <li> 处理先前自蒸馏方法即时信息丢失、额外内存消耗、并行化程度低<br><li> 提出最后一个小批量自蒸馏DLB，只存储上一批次数据产生的软标签 | 蒸馏训练优化                         |
 | 8    | 2022 | ECCV    | A Fast Knowledge Distillation Framework for Visual Recognition (FKD) | <li> 针对蒸馏训练需要额外对教师模型推理引入额外开销<br><li> 在教师模型推理阶段保存数据增强及输出结果在训练学生时复用 | 蒸馏训练优化<br>教师推理开销         |
 | 9    | 2022 | ECCV    | Knowledge Condensation Distillation (KCD)                    | <li> 认为对全部知识蒸馏是冗余的<br><li> 提出在线全局价值估计每个知识点的价值<br><li> 将知识点分为强中弱三个档次分别处理 | 蒸馏训练优化<br>知识筛选             |
+|      | 2022 | CVPR    | Knowledge Distillation as Efficient Pre-training: Faster Convergence, Higher Data-efficiency and Better Transferability | <li> 直接使用预训练模型进行蒸馏<br><li> 在师生模型之间添加可学习模块会损害表示学习的性能<br><li> 提出非参数的对齐方式，使用奇异值分解来完成对齐<br><li>提出指数温度缩放PTS来减少方差的差异并保持原始特征的相对幅度 | 特征对齐<br> 奇异值分解<br> 温度系数 |
 | 10   | 2022 | NeurIPS | Knowledge Distillation from A Stronger Teacher               | <li> 学生应当更关注教师输出的相对排名而不是确切概率<br><li> 提出类内相似性和类间相似性<br><li> 提出使用皮尔森距离作为新的距离度量 | 蒸馏度量优化                         |
 | 11   | 2023 | AAAI    | Curriculum Temperature for Knowledge Distillation (CTKD)     | <li> 教育应当遵循由易到难的过程，提出使用温度系数调整任务难度 <br><li> 提出使用GAN的思想学习温度系数<br><li> 给出了两种可学习温度模块 | 蒸馏训练优化<br>温度系数学习         |
 | 12   | 2023 | CVPR    | Generalization Matters: Loss Minima Flattening via Parameter Hybridization for Efficient Online Knowledge Distillation | <li> 在线知识蒸馏，寻找平坦最优解<br><li> 提出混合权重模型HWM<br><li> 提出融合策略按照计划利用混合模型更新学生模型 | 蒸馏泛化性<br>平坦最优解             |
@@ -103,16 +105,23 @@ When does label smoothing help?
 |      | 2023 | ICCV    | From Knowledge Distillation to Self-Knowledge Distillation: A Unified Approach with Normalized Loss and Customized Soft Labels | <li> 针对logit的耦合问题进一步研究，将2022CVPR DKD迁移到自蒸馏的场景<br> <li> DKD非目标类师生模型的logit和不同阻碍分布相似，该工作对其进行归一化<br><li> 结合齐夫定理标签平滑给出一套软标签的生成方案 | 自蒸馏<br>logit解耦                  |
 |      | 2024 | arXiv   | Dynamic Temperature Knowledge Distillation                   | <li>提出使用logsumexp函数来评价logits的平滑度，通过调节温度系数使得师生模型logit之间的平滑度差异最小<br><li>设定一个相同的初始温度，尖锐度较大的教师温度设为$\tau+\delta$，尖锐度较小的教师温度设为$\tau-\delta$<br><li>能够很好的与其他方法结合 | 温度系数<br>师生差距<br>任务难度调整 |
 |      | 2024 | CVPR    | Logit Standardization in Knowledge Distillation              | <li> 从信息论的最大熵理论利用拉格朗日乘子法推导的温度系数<br><li>传统KD会迫使学生模型模仿教师模型的偏移量标准差<br><li> 提出利用样本均值标准差进行标准化来发挥温度系数的作用 | 温度系数<br>信息论角度推导           |
-|      | 2024 | CVPR    | $V_kD$：Improving Knowledge Distillation using Orthogonal Projections | <li> 提出一个正交投影层使其能最大限度的将蒸馏知识传递给学生模型<br><li> 先前工作的辅助损失会损害性能，提出对教师模型特征进行白化来增加任务的多样性特征 |                                      |
+|      | 2024 | CVPR    | $V_kD$：Improving Knowledge Distillation using Orthogonal Projections | <li> 提出一个正交投影层使其能最大限度的将蒸馏知识传递给学生模型<br><li> 先前工作的辅助损失会损害性能，提出对教师模型特征进行白化来增加任务的多样性特征 | 知识空间优化<br> 特征白化            |
+|      | 2024 | AAAI    | Understanding the Role of the Projector in Knowledge Distillation | <li> 针对蒸馏中的投影层，归一化层和距离函数进行探究<br><li> 投影层在蒸馏中的作用可以描述为蒸馏损失本身所需的信息编码器<br><li> 将学生特征白化具有完美的去相关性能够捕获学生和教师特征之间的交叉关系<br><li> 利用LogSum函数弥合师生差距大无法完美对齐的问题 | 师生差距<br>组件作用                 |
+|      |      |         |                                                              |                                                              |                                      |
+|      |      |         |                                                              |                                                              |                                      |
 
 ## 大模型蒸馏
 
-| 序号 | 年份 | 出处    | 题目                                                         | 关键点                                                       | 目标                                |
-| ---- | ---- | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------------- |
-| 1    | 2021 | NeurIPS | Train Data-Efficient Image Transformers & Distillation Through Attention (DeiT) | <li> 用卷积网络指导ViT训练<br><li> 提出蒸馏token接收教师知识<br><li> 提出一种新的硬蒸馏策略 | token蒸馏<br>卷积老师               |
-| 2    | 2022 | CVPR    | Co-advise: Cross Inductive Bias Distillation (CiT)           | <li> 对DeiT的改进 <br><li> 分析了不同教师归纳偏差的重要性<br><li> 提出多个token并用不同类型的教师教授ViT | token蒸馏<br>卷积老师<br>内卷老师   |
-| 3    | 2023 | CVPR    | TinyMIM: An Empirical Study of Distilling MIM Pre-trained Models | <li> 研究了如何将MIM知识转移到较小网络中<br><li> 研究了蒸馏特征图 cls token 和 QKV关系的性能，蒸馏QKV最好<br><li> 提出类似助教的顺序蒸馏策略 | QKV蒸馏<br>MIM老师                  |
-|      | 2023 | CVPR    | Supervised Masked Knowledge Distillation for Few-Shot Transformers | <li> ViT在小样本的设定下容易过拟合且缺乏类似归纳偏置的机制有严重的性能下降问题<br><li> 提出两阶段训练，首先利用cls的交叉熵和MIM损失进行自监督训练<br><li> 允许跨类内图像patch的蒸馏，利用余弦相似度找到师生模型同一类别不同图像中相似patch学习 | 小样本<br>MiM损失<br>跨类内图像蒸馏 |
-|      |      |         |                                                              |                                                              |                                     |
-|      |      |         |                                                              |                                                              |                                     |
-
+| 序号 | 年份 | 出处    | 题目                                                         | 关键点                                                       | 目标                                  |
+| ---- | ---- | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------- |
+| 1    | 2021 | NeurIPS | Train Data-Efficient Image Transformers & Distillation Through Attention (DeiT) | <li> 用卷积网络指导ViT训练<br><li> 提出蒸馏token接收教师知识<br><li> 提出一种新的硬蒸馏策略 | token蒸馏<br>卷积老师                 |
+| 2    | 2022 | CVPR    | Co-advise: Cross Inductive Bias Distillation (CiT)           | <li> 对DeiT的改进 <br><li> 分析了不同教师归纳偏差的重要性<br><li> 提出多个token并用不同类型的教师教授ViT | token蒸馏<br>卷积老师<br>内卷老师     |
+| 3    | 2023 | CVPR    | TinyMIM: An Empirical Study of Distilling MIM Pre-trained Models | <li> 研究了如何将MIM知识转移到较小网络中<br><li> 研究了蒸馏特征图 cls token 和 QKV关系的性能，蒸馏QKV最好<br><li> 提出类似助教的顺序蒸馏策略 | QKV蒸馏<br>MIM老师                    |
+|      | 2023 | CVPR    | Supervised Masked Knowledge Distillation for Few-Shot Transformers | <li> ViT在小样本的设定下容易过拟合且缺乏类似归纳偏置的机制有严重的性能下降问题<br><li> 提出两阶段训练，首先利用cls的交叉熵和MIM损失进行自监督训练<br><li> 允许跨类内图像patch的蒸馏，利用余弦相似度找到师生模型同一类别不同图像中相似patch学习 | 小样本<br>MiM损失<br>跨类内图像蒸馏   |
+|      | 2023 | ICCV    | Cumulative Spatial Knowledge Distillation for Vision Transformers  CSKD | <li> 将CNN知识经过全局池化设为全局知识；不经过的设为局部知识<br><li> 提出了累计空间知识蒸馏，在训练前期利用局部知识对ViT进行优化，充分利用CNN局部归纳偏差的益处<br><li> 训练后期局部特征会损害ViT的学习，利用CNN的全局特征继续向ViT输送知识 | CNN to ViT <br> CNN局部知识与全局知识 |
+|      |      |         |                                                              |                                                              |                                       |
+|      | 2023 | CVPR    | Masked AutoEncoders Enable Efficient Knowledge Distillers DMAE | <li> 研究了从预训练模型MAE中提取知识的能力<br><li> 训练轮次降低到100，掩码率提升到95%，利用L1范数距离来匹配中间特征获得学生模型 | ViT to ViT<br>MIM损失                 |
+|      | 2024 | CVPR    | Asymmetric Masked Distillation for Pre-Training Small Foundation Models | <li> MAE的重建蒸馏(DMAE)对教师模型的高掩码率会丢失重要信息，提出非对称的MAE蒸馏<br><li> 教师模型拥有更多可见快，教师掩码块是学生的子集<br><li> 提出直接对齐和生成式对齐来处理师生中均可见的部分和尽在教师中可见的部分 | ViT to ViT<br>非对称MIM损失           |
+|      | 2024 | AAAI    | No Head Left Behind - Multi-Head Alignment Distillation for Transformers | <li> 多头注意力蒸馏方法，一对一的方式没有考虑语义的对其性，不同数量的注意力头不能完美匹配<br><li>提出注意力头对齐蒸馏，利用教师头与学生头之间的余弦相似性，每一个教师头指导所有的学生头，权重相似性来控制 |                                       |
+|      |      |         |                                                              |                                                              |                                       |
+|      |      |         |                                                              |                                                              |                                       |
