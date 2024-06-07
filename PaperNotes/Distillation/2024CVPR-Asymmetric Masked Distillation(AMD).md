@@ -91,12 +91,12 @@ z(p)表示输入序列中第p个token中提取的特征
 
 当学生和教师输入长度不匹配时，可以应用生成对齐，长度差记为$\hat{N}_{diff} = \hat{N}_{tea} - \hat{N}_{stu}$，可见标记集合记为差集$P^{diff} = P^{vis}_{tea} \setminus P^{vis}_{stu}$。我们用$z^l_{stu}, z^{l^*}_{tea}$表示学生和教师从对应图层中获得的特征，$\phi_g(·)$表示映射学生特征的投射层。
 
-由于教师标记比学生多，我们利用学生模型生成标记来与教师对齐。我们的生成器G是具有多头自注意力MHA的解码器，我们需要将输入与mask token zm连接，并添加位置编码：
+由于教师标记比学生多，我们利用学生模型生成标记来与教师对齐。我们的生成器G是具有多头自注意力MHA的解码器，我们需要将输入与mask token z_m连接，并添加位置编码：
 $$
 \tilde{z}^l_{stu} = \phi_g(z^l_{stu}) \in \R^{\hat{N}_{stu}\times D_{tea}} \\
 \mathcal{G}(\tilde{z}^l_{stu}) = MHA(concat(\tilde{z}^l_{stu}, repeat(z_m)) + PE)
 $$
-我们重复了mask token N_diff 次，通过均方误差来作为损失函数对单层特征对齐继续宁训练：
+我们重复了mask token N_diff 次，通过均方误差来作为损失函数对单层特征对齐进行训练：
 $$
 L_{gen} = \frac{1}{\hat{N}_{diff}}\sum_{p_i\in {P}^{vis}}|z^{l^*}_{tea}(p_i) - \mathcal{G}(z^l_{stu})(p_i)|^2
 $$
