@@ -130,3 +130,5 @@ When does label smoothing help?
 | 8    | 2024 | AAAI    | No Head Left Behind - Multi-Head Alignment Distillation for Transformers | <li> 多头注意力蒸馏方法，一对一的方式没有考虑语义的对其性，不同数量的注意力头不能完美匹配<br><li>提出注意力头对齐蒸馏，利用教师头与学生头之间的余弦相似性，每一个教师头指导所有的学生头，权重相似性来控制 | ViT to ViT<br>注意力头蒸馏            |
 |      |      |         |                                                              |                                                              |                                       |
 |      |      |         |                                                              |                                                              |                                       |
+
+
