@@ -58,7 +58,7 @@ When does label smoothing help?
 | 18   | 2019         | ICCV          | Be Your Own Teacher: Improve the Performance of Convolutional Neural Networks via Self Distillation | <li> 网络分组自蒸馏方法<br><li> 通过交叉熵 KL损失 和 Hint损失来优化模型 | 中间层<br>特征logits             |
 | 19   | 2019         | ICCV          | Corrlation Congruence for Knowledge Distillation (CCKD)      | <li> 不仅考虑实例一致性，还考虑样本相关一致性<br><li>  通过内核的方法捕获样本之间的相关性<br><li> 提出一个采样器来采样计算样本相关性 | 中间层<br>实例关系               |
 | 20   | 2019         | ICCV          | A Comprehensive Overhaul of Feature Distillaion              | <li> 详细对比了具有代表性的六种蒸馏方法<br><li> 修改ReLU结构保存教师信息<br><li> 给出一种新的距离度量 <br><li> 分析修改BN层 | 中间层                           |
-| 21   | 2019         | ICCV          | Similarity-Preserving Knowledge Distillation (SP)            | <li> 相似样本引发相似的激活模式<br><li> 利用样本相似性传递激活模式 | 中间层<br>激活模式               |
+| 21   | 2019         | ICCV          | Similarity-Preserving Knowledge Distillation (SP)            | <li> 相似样本引发相似的激活模式<br><li> 利用样本相似性传递激活模式 | 中间层<br>激活模式<br>实例关系   |
 | 22   | 2020         | ICLR          | Contrastive Representation Distillation (CRD)                | <li> 引入对比损失项考虑目标之间的依赖关系<br><li> 最大化教师和学生表示之间的互信息下界 | 中间层<br>倒数第二层<br>实例关系 |
 |      | 2020         | ECCV          | Knowledge Distillation Meets Self-Supervision SSKD           | <li> 引入自监督对比损失辅助任务来帮助模型学习更全面的知识<br><li> 提出topK选择性转移策略来更好的利用样本变换带来的暗知识<br> <li> 核心思想在于传递这种不准确但结构化的知识 | 中间层<br> 样本变换<br>对比损失  |
 | 23   | 2021         | AAAI          | Cross-Layer Distillation with Semantic Calibration           | <li> 处理中间层语义不匹配<br><li> 提出使用相似度矩阵和注意力机制来进行中间层关联 | 中间层<br>Attention              |
@@ -116,8 +116,12 @@ When does label smoothing help?
 
 | 序号 | 年份 | 出处    | 题目                                                         | 关键点                                                       | 目标                                  |
 | ---- | ---- | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------- |
-| 1    | 2021 | NeurIPS | Train Data-Efficient Image Transformers & Distillation Through Attention (DeiT) | <li> 用卷积网络指导ViT训练<br><li> 提出蒸馏token接收教师知识<br><li> 提出一种新的硬蒸馏策略 | token蒸馏<br>卷积老师                 |
+| 1    | 2021 | NeurIPS | Train Data-Efficient Image Transformers & Distillation Through Attention (DeiT) | <li> 用卷积网络指导ViT训练<br><li> 提出蒸馏token接收教师知识<br><li> 提出一种新的硬蒸馏策略 | CNN to ViT<br>token蒸馏<br>卷积老师   |
 | 2    | 2022 | CVPR    | Co-advise: Cross Inductive Bias Distillation (CiT)           | <li> 对DeiT的改进 <br><li> 分析了不同教师归纳偏差的重要性<br><li> 提出多个token并用不同类型的教师教授ViT | token蒸馏<br>卷积老师<br>内卷老师     |
+|      | 2022 | ACCV    | Cross-Architecture Knowledge Distillation                    |                                                              |                                       |
+|      | 2022 | ECCV    | TinyViT: Fast Pretraining Distillation for Small Vision Transformers |                                                              |                                       |
+|      | 2022 | CVPR    | MiniViT: Compressing Vision Transformers with Weight Multiplexing |                                                              |                                       |
+|      | 2022 | arXiv   | ViTKD: Practical Guidelines For ViT Feature Knowledge Distillation |                                                              |                                       |
 | 3    | 2023 | CVPR    | TinyMIM: An Empirical Study of Distilling MIM Pre-trained Models | <li> 研究了如何将MIM知识转移到较小网络中<br><li> 研究了蒸馏特征图 cls token 和 QKV关系的性能，蒸馏QKV最好<br><li> 提出类似助教的顺序蒸馏策略 | QKV蒸馏<br>MIM老师                    |
 | 4    | 2023 | CVPR    | Supervised Masked Knowledge Distillation for Few-Shot Transformers | <li> ViT在小样本的设定下容易过拟合且缺乏类似归纳偏置的机制有严重的性能下降问题<br><li> 提出两阶段训练，首先利用cls的交叉熵和MIM损失进行自监督训练<br><li> 允许跨类内图像patch的蒸馏，利用余弦相似度找到师生模型同一类别不同图像中相似patch学习 | 小样本<br>MiM损失<br>跨类内图像蒸馏   |
 | 5    | 2023 | ICCV    | Cumulative Spatial Knowledge Distillation for Vision Transformers  CSKD | <li> 将CNN知识经过全局池化设为全局知识；不经过的设为局部知识<br><li> 提出了累计空间知识蒸馏，在训练前期利用局部知识对ViT进行优化，充分利用CNN局部归纳偏差的益处<br><li> 训练后期局部特征会损害ViT的学习，利用CNN的全局特征继续向ViT输送知识 | CNN to ViT <br> CNN局部知识与全局知识 |
