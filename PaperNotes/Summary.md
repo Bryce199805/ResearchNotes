@@ -2,7 +2,8 @@
 
 Revisiting Label Smoothing and Knowledge Distillation Compatibility What was Missing?
 
-引用的两篇 没看
+引用的两篇 没看 
+测试一下好不好使
 
 Is label smoothing truly incompatible with knowledge distillation: An empirical study.
 
