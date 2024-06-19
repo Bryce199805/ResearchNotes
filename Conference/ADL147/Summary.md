@@ -487,7 +487,7 @@ DomainRAG: A Chinese Benchmark for Evaluating Domain-specific Retrieval-Augmente
 - 对话式RAG的进一步探索
 - 面向RAG的训练 （预训练、指令微调）
 - 长窗口与RAG之间的关联
-- RAG系统的评估fang'fa
+- RAG系统的评估方法
 
 ### Part 3 生成式文档检索
 
@@ -1137,7 +1137,7 @@ Large Search Model: Redefining Search Stack in the Era of LLMs, 2023
 
 #### LLMs会取代搜索引擎么
 
-- 在可预见的未来中，LLM和搜索引擎可能s
+- 在可预见的未来中，LLM和搜索引擎可能会相辅相成
 
 ## Report 6. LLM-Based Tool Learning and Autonomous Agents
 
@@ -1200,7 +1200,7 @@ ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs arX
 
 ![image-20240526233933016](imgs/image-20240526233933016.png)
 
-### Human-Agent Collaboration 人类-智能体协作
+#### Human-Agent Collaboration 人类-智能体协作
 
 有些问题全部由智能体来代理性能并不佳，但是将其中很小一部分交给人类完成性能能够得到大幅提升，引入人机协作问题
 
