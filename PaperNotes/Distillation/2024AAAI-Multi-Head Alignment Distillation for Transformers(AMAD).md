@@ -2,7 +2,7 @@
 
 **[AAAI 2024](https://www.amazon.science/publications/no-head-left-behind-multi-head-alignment-distillation-for-transformers)	code in Appendix	MS-COCO  VQA-2.0  Multi30K	20240517**
 
-*Tianyang Zhao, Kunwar Yashraj Singh, Srikar Appalaraju, Peng Tang, Vijay Mahadevan, R. Manmatha, Ying Nian Wu*
+*Tianyang Zhao, Kunwar Yashraj Singh, Src'cikar Appalaraju, Peng Tang, Vijay Mahadevan, R. Manmatha, Ying Nian Wu*
 
 针对多头注意力的蒸馏方法，先前工作一对一的方式没有考虑语义的对齐性，并且不同数量的注意力头不能完美的匹配，这项工作针对这个问题提出了注意力图对齐蒸馏，利用教师头和学生头之间的余弦相似性，教师头指导每一个学生头，权重由相似性控制，基于这种思想给出了4中变体的AMAD损失。
 
