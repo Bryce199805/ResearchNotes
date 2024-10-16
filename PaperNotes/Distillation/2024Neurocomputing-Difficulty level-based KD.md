@@ -23,7 +23,7 @@ Neurocomputing 2024	no code	CIFAR100  ImageNet  FGVR  20240911
 先前的KD方法知识表示为：
 $$
 t = f_t(x;\theta_t) \\
-s = f_s(x;\theta_s) 
+s = f_s(x;\theta_s)
 $$
 我们提出一个辅助知识：
 $$
