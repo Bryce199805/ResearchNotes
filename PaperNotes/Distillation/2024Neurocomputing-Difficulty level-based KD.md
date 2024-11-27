@@ -1,6 +1,6 @@
 # Difficulty level-based knowledge distillation
 
-Neurocomputing 2024	no code	CIFAR100  ImageNet  FGVR  20240911
+Neurocomputing 2024	no code	CIFAR100  ImageNet  FGVR  20240911	温度系数
 
 *Gyeongdo Ham, Yucheol Cho, Jae-Hyeok Lee, Minchan Kang, Gyuwon Choi, Daeshik Kim*
 

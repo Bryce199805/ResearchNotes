@@ -1,6 +1,6 @@
 # Instance Temperature Knowledge Distillation
 
-**[arXiv2407](https://arxiv.org/abs/2407.00115)	[code in github](https://github.com/Zhengbo-Zhang/ITKD)	CIFAR  ImageNet  MSCOCO	20240902**
+**[arXiv2407](https://arxiv.org/abs/2407.00115)	[code in github](https://github.com/Zhengbo-Zhang/ITKD)	CIFAR  ImageNet  MSCOCO	20240902**	温度系数
 
 *Zhengbo Zhang, Yuxi Zhou, Jia Gong, Jun Liu, Zhigang Tu*
 

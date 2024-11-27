@@ -1,6 +1,6 @@
 # LoCa: Logit Calibration for Knowledge Distillation
 
-**[ECAI 2024](https://arxiv.org/abs/2409.04778)	no code	CIFAR100 ImageNet	20241009**
+**[ECAI 2024](https://arxiv.org/abs/2409.04778)	no code	CIFAR100 ImageNet	20241009**	知识结构
 
 *Runming Yang, Taiqiang Wu, Yujiu Yang*
 

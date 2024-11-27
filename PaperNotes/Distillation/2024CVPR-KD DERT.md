@@ -1,6 +1,6 @@
 # KD-DETR: Knowledge Distillation for Detection Transformer with Consistent Distillation Points Sampling
 
-**[CVPR 2024](https://openaccess.thecvf.com/content/CVPR2024/html/Wang_KD-DETR_Knowledge_Distillation_for_Detection_Transformer_with_Consistent_Distillation_Points_CVPR_2024_paper.html)	no code	MS COCO	20240924**
+**[CVPR 2024](https://openaccess.thecvf.com/content/CVPR2024/html/Wang_KD-DETR_Knowledge_Distillation_for_Detection_Transformer_with_Consistent_Distillation_Points_CVPR_2024_paper.html)	no code	MS COCO	20240924**	知识结构  构造一致蒸馏点
 
 *Yu Wang, Xin Li, Shengzhao Weng, Gang Zhang, Haixiao Yue, Haocheng Feng, Junyu Han, Errui Ding*
 

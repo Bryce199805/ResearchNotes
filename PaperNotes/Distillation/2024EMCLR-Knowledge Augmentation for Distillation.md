@@ -1,6 +1,6 @@
 # Knowledge Augmentation for Distillation: A General and Effective Approach to Enhance Knowledge Distillation
 
-**[2024 1st EMCLR](https://dl.acm.org/doi/abs/10.1145/3688863.3689569)	no code	CIFAR ImageNet	20241115**
+**[2024 1st EMCLR](https://dl.acm.org/doi/abs/10.1145/3688863.3689569)	no code	CIFAR ImageNet	20241115**	知识结构
 
 本文提出了一种知识蒸馏性能提升的新视角，先前方法都是学习现有的知识，本文提出通过生成增强样本来将教师模型的知识进一步转移到学生模型中，并且改进融合了N-pair损失，使之增大类别间的距离，减小相似对之间的输出差异。
 

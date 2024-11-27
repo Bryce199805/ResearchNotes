@@ -1,6 +1,6 @@
 # EPSD: Early Pruning with Self-Distillation for Efficient Model Compression
 
-**[2024 AAAI](https://ojs.aaai.org/index.php/AAAI/article/view/29004)	no code	CIFAR ImageNet	20241023**
+**[2024 AAAI](https://ojs.aaai.org/index.php/AAAI/article/view/29004)	no code	CIFAR ImageNet	20241023**	自蒸馏 剪枝
 
 *Dong Chen  Ning Liu  Yichen Zhu  Zhengping Che  Rui Ma  Fachao Zhang  Xiaofeng Mou  Yi Chang  Jian Tang*
 

@@ -1,6 +1,6 @@
 # Dynamic Guidance Adversarial Distillation with  Enhanced Teacher Knowledge
 
-**[arXiv 2409](https://arxiv.org/abs/2409.01627)	[code in github](https://github.com/kunsaram01/DGAD)	CIFAR  TinyImageNet	20240914**
+**[arXiv 2409](https://arxiv.org/abs/2409.01627)	[code in github](https://github.com/kunsaram01/DGAD)	CIFAR  TinyImageNet	20240914**	知识结构 对抗性蒸馏
 
 *Hyejin Park, Dongbo Min*
 

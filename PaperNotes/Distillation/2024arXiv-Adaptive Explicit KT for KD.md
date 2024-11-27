@@ -1,6 +1,6 @@
 # Adaptive Explicit Knowledge Transfer for Knowledge Distillation
 
-**[arXiv 2409](https://arxiv.org/abs/2409.01679)	no code	CIFAR ImageNet	20240915**
+**[arXiv 2409](https://arxiv.org/abs/2409.01679)	no code	CIFAR ImageNet	20240915	**损失结构
 
 *Hyungkeun Park, Jong-Seok Lee*
 

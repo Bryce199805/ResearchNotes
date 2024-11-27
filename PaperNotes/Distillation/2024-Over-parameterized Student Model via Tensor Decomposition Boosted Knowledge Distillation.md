@@ -1,6 +1,6 @@
 # Over-parameterized Student Model via Tensor Decomposition Boosted Knowledge Distillation
 
-2024 ？ 	[code in github](https://github.com/intell-sci-comput/OPDF)	NLP CV	20241114
+2024 ？ 	[code in github](https://github.com/intell-sci-comput/OPDF)	NLP CV	20241114	蒸馏过程
 
 本文从另一个视角改进了知识蒸馏，使学生模型有超越教师模型的潜力，提出通过MPO矩阵乘积运算分解算法将学生模型的参数矩阵分解为多个张量相乘，其中中间的张量包含大量参数和重要信息，称为中心张量，这部分由真实标签指导进行独立学习；两侧的张量参数较少包含辅助信息，这部分通过教师模型对应的维度相同的张量通过MSE损失进行匹配，使学生模型从教师模型中获取知识。
 

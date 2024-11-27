@@ -1,6 +1,6 @@
 # Computation-Efficient Knowledge Distillation via Uncertainty-Aware Mixup
 
-**[2024 AAAI](https://arxiv.org/abs/2012.09413)	[code in github](https://github.com/xuguodong03/UNIXKD)	CIFAR  ImageNet	20241020**
+**[2024 AAAI](https://arxiv.org/abs/2012.09413)	[code in github](https://github.com/xuguodong03/UNIXKD)	CIFAR  ImageNet	20241020	**蒸馏过程
 
 *Guodong Xu, Ziwei Liu, Chen Change Loy*
 

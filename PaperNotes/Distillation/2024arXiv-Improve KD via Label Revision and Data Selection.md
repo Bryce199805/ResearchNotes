@@ -1,6 +1,6 @@
 # Improve Knowledge Distillation via Label Revision  and Data Selection
 
-[arXiv 2404](https://arxiv.org/abs/2404.03693)	no code	-	20240912
+[arXiv 2404](https://arxiv.org/abs/2404.03693)	no code	-	20240912	知识结构
 
 *Weichao Lan, Yiu-ming Cheung, Qing Xu, Buhua Liu, Zhikai Hu, Mengke Li, Zhenghua Chen*
 

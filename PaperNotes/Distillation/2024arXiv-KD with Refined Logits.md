@@ -1,6 +1,6 @@
 # Knowledge Distillation with Refined Logits
 
-**[arXiv 2408](https://www.arxiv.org/abs/2408.07703)	[code in github](https://github.com/zju-SWJ/RLD)	CIFAR100 ImageNet	20240904**
+**[arXiv 2408](https://www.arxiv.org/abs/2408.07703)	[code in github](https://github.com/zju-SWJ/RLD)	CIFAR100 ImageNet	20240904**	知识结构
 
 *Wujie Sun, Defang Chen, Siwei Lyu, Genlang Chen, Chun Chen, Can Wang*
 

@@ -1,6 +1,6 @@
 # PDD: Pruning Neural Networks During Knowledge Distillation
 
-**[Cognitive Computation 2024](https://link.springer.com/article/10.1007/s12559-024-10350-9)	[code in github](https://github.com/YihangZhou0424/PDD-Pruning-during-distillation)	CIFAR  ImageNet	20240912**
+**[Cognitive Computation 2024](https://link.springer.com/article/10.1007/s12559-024-10350-9)	[code in github](https://github.com/YihangZhou0424/PDD-Pruning-during-distillation)	CIFAR  ImageNet	20240912**	剪枝
 
 *Xi Dan, Wenjie Yang, Fuyan Zhang, Yihang Zhou, Zhuojun Yu, Zhen Qiu, Boyuan Zhao, Zeyu Dong, Libo Huang & Chuanguang Yang* 
 

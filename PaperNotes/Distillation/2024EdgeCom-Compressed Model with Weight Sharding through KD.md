@@ -1,6 +1,6 @@
 # Improving Robustness of Compressed Models with Weight Sharing through Knowledge Distillation
 
-**EdgeCom 2024	no code	CIFAR10/100-C	20240910**
+**EdgeCom 2024	no code	CIFAR10/100-C	20240910**	知识结构
 
 *Saeed Khalilian Gourtani  Nirvana Meratnia*
 

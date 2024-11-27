@@ -1,6 +1,6 @@
 # Correlation-Decoupled Knowledge Distillation for  Multimodal Sentiment Analysis with Incomplete Modalities
 
-**[CVPR 2024](https://arxiv.org/abs/2404.16456)	no code	MOSI MOSEI	20240919**
+**[CVPR 2024](https://arxiv.org/abs/2404.16456)	no code	MOSI MOSEI	20240919**	跨模态 CDKD
 
 *Mingcheng Li, Dingkang Yang, Xiao Zhao, Shuaibing Wang, Yan Wang, Kun Yang, Mingyang Sun, Dongliang Kou, Ziyun Qian, Lihua Zhang*
 

@@ -1,6 +1,6 @@
 # CrossKD: Cross-Head Knowledge Distillation for Object Detection
 
-**[2024 CVPR](https://openaccess.thecvf.com/content/CVPR2024/html/Wang_CrossKD_Cross-Head_Knowledge_Distillation_for_Object_Detection_CVPR_2024_paper.html)	no code	COCO	20240923**
+**[2024 CVPR](https://openaccess.thecvf.com/content/CVPR2024/html/Wang_CrossKD_Cross-Head_Knowledge_Distillation_for_Object_Detection_CVPR_2024_paper.html)	no code	COCO	20240923**	知识结构
 
 *Jiabao Wang, Yuming Chen, Zhaohui Zheng, Xiang Li, Ming-Ming Cheng, Qibin Hou*
 

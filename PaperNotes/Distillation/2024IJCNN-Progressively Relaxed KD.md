@@ -1,6 +1,6 @@
 # Progressively Relaxed Knowledge Distillation
 
-**[2024 IJCNN](https://ieeexplore.ieee.org/abstract/document/10650544)	no code	CIFAR  TinyImageNet  CalTech256	20241014**
+**[2024 IJCNN](https://ieeexplore.ieee.org/abstract/document/10650544)	no code	CIFAR  TinyImageNet  CalTech256	20241014**	蒸馏过程
 
 Xiaozhe Gu; Ran Jin; Mingliang Li
 

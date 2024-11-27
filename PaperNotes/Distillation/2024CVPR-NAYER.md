@@ -1,6 +1,6 @@
 # NAYER: Noisy Layer Data Generation for Efficient and Effective Data-free  Knowledge Distillation
 
-**[CVPR 2024](https://openaccess.thecvf.com/content/CVPR2024/html/Tran_NAYER_Noisy_Layer_Data_Generation_for_Efficient_and_Effective_Data-free_CVPR_2024_paper.html)	[code in github](https://github.com/tmtuan1307/nayer)	CIFAR  TinyImageNet	20240926**
+**[CVPR 2024](https://openaccess.thecvf.com/content/CVPR2024/html/Tran_NAYER_Noisy_Layer_Data_Generation_for_Efficient_and_Effective_Data-free_CVPR_2024_paper.html)	[code in github](https://github.com/tmtuan1307/nayer)	CIFAR  TinyImageNet	20240926**	无数据蒸馏
 
 *Minh-Tuan Tran, Trung Le, Xuan-May Le, Mehrtash Harandi, Quan Hung Tran, Dinh Phung*
 

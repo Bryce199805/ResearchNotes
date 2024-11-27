@@ -1,6 +1,6 @@
 # Cooperative Knowledge Distillation: A Learner Agnostic Approach
 
-**[AAAI 2024](https://ojs.aaai.org/index.php/AAAI/article/view/29322)	no code	FashionMNIST	20241019**
+**[AAAI 2024](https://ojs.aaai.org/index.php/AAAI/article/view/29322)	no code	FashionMNIST	20241019**	知识结构
 
 *Michael Livanos  Ian Davidson  Stephen Wong*
 

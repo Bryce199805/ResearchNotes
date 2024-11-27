@@ -1,6 +1,6 @@
 # Decoupling Dark Knowledge via Block-wise Logit  Distillation for Feature-level Alignment
 
-**[arXiv2411](https://arxiv.org/abs/2411.01547)	no code 	CIFAR ImageNet COCO	20241109**
+**[arXiv2411](https://arxiv.org/abs/2411.01547)	no code 	CIFAR ImageNet COCO	20241109**	蒸馏过程
 
 Chengting Yu, Fengzhao Zhang, Ruizhe Chen, Zuozhu Liu, Shurun Tan, Er-Ping Li, Aili Wang
 

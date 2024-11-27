@@ -1,6 +1,6 @@
 # Adaptive class token knowledge distillation for efficient vision transformer
 
-**[2024 KBS](https://www.sciencedirect.com/science/article/pii/S0950705124011651)	no code	CIFAR CALTECH-256	20241016**
+**[2024 KBS](https://www.sciencedirect.com/science/article/pii/S0950705124011651)	no code	CIFAR CALTECH-256	20241016**	ViT to ViT
 
 *Minchan Kang, Sanghyeok Son, Daeshik Kim*
 

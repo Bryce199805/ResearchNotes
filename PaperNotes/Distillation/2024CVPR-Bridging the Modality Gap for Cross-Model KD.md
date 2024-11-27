@@ -2,7 +2,7 @@
 
 # $C^2$KD: Bridging the Modality Gap for Cross-Modal Knowledge Distillation
 
-**[CVPR 2024](https://openaccess.thecvf.com/content/CVPR2024/html/Huo_C2KD_Bridging_the_Modality_Gap_for_Cross-Modal_Knowledge_Distillation_CVPR_2024_paper.html)	no code	CREMA-D AVE VGGSound CrisisMMD	20240903**
+**[CVPR 2024](https://openaccess.thecvf.com/content/CVPR2024/html/Huo_C2KD_Bridging_the_Modality_Gap_for_Cross-Modal_Knowledge_Distillation_CVPR_2024_paper.html)	no code	CREMA-D AVE VGGSound CrisisMMD	20240903	**跨模态
 
 *Fushuo Huo, Wenchao Xu, Jingcai Guo, Haozhao Wang, Song Guo*
 

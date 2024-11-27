@@ -1,6 +1,6 @@
 # Logit Standardization in Knowledge Distillation
 
-**[CVPR 2024](https://arxiv.org/abs/2403.01427)	[code in github](https://github.com/sunshangquan/logit-standardization-KD)	CIFAR100  ImageNet	20240503**
+**[CVPR 2024](https://arxiv.org/abs/2403.01427)	[code in github](https://github.com/sunshangquan/logit-standardization-KD)	CIFAR100  ImageNet	20240503**	温度系数
 
 *Shangquan Sun, Wenqi Ren, Jingzhi Li, Rui Wang, Xiaochun Cao*
 

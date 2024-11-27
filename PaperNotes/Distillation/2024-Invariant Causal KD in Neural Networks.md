@@ -1,6 +1,6 @@
 # Invariant Causal Knowledge Distillation in Neural Networks
 
-2024	[code in github](https://github.com/giakoumoglou/distillers)	CIFAR ImageNet STL-10 TinyImageNet	20241010
+2024	[code in github](https://github.com/giakoumoglou/distillers)	CIFAR ImageNet STL-10 TinyImageNet	20241010	logit蒸馏
 
 本文针对logit蒸馏进行改进，针对先前的对比学习转移结构信息CRD，其忽视了表示学习中的不变性表示，并且需要较大的内存，提出因果不变蒸馏框架，在蒸馏损失中加入对比学习，并引入师生模型的相似性分数来促进学生获得教师的一致性表示。
 
