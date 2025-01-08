@@ -1,0 +1,43 @@
+# Adaptive Cross-architecture Mutual Knowledge Distillation
+
+
+
+## Introduction
+
+当学生模型相比于教师模型性能不足时，知识蒸馏无法达到较高的精度性能，因此有的方法同时训练多个学生模型来获得更好的性能，但是这些方法主要集中在同质模型的蒸馏，没有考虑异构架构模型。
+
+如何利用归纳偏差来缩小基于Transformer的教师模型和异构学生模型在蒸馏中的性能差距？
+
+我们考虑了三种异构模型的相互作用（CNN INN Transformer），我们提出的框架成为自适应交叉架构相互知识蒸馏ACMKD
+
+- 将基于Transformer的教师蒸馏为具有不同归纳偏差的异质学生，来缓解蒸馏过程中性能差距问题
+
+- 引入了两阶段蒸馏策略，使得精度表现最低的学生可以动态的从其他更强的学生模型中学习，使得最终集成的学生模型具有更高的精度表现
+
+  
+
+## Method
+
+选择三种异构架构的主流模型作为学生网络，包括CNN、INN和Transformer；选择Transformer架构模型为教师模型
+
+![image-20250108154406878](imgs/image-20250108154406878.png)
+
+损失函数表示为：
+$$
+L_{logit} = \lambda_0L_{CE} + \lambda_1L_{KD}^{T_T\rightarrow S_C} + \lambda_2L_{KD}^{T_T\rightarrow S_I} + \lambda_3L_{KD}^{T_T\rightarrow S_T}
+$$
+超参数依据先前经验取$\lambda_0 = \lambda_1 = \lambda_2 = \lambda_3 = 1$；$F_{S_{C_i}}$的注意力图可以表示为$A_i(F_{S_{C_i}})$，$A_i(·)$表示注意力模型，注意力机制可以表述为：
+$$
+\begin{aligned}
+F'_{S_{C_i}} = A^c_i(F_{S_{C_i}}) \otimes F_{S_{C_i}} \\
+F''_{S_{C_i}} = A^s_i(F'_{S_{C_i}}) \otimes F'_{S_{C_i}}
+\end{aligned}
+$$
+其中$A^c_i(·) A^s_i(·)$分别表示通道注意力模型和空间注意力模型，由于我们有教师模型和三个学生模型，注意力相似损失表述为：
+
+![image-20250108173917884](imgs/image-20250108173917884.png)
+
+$<·,·>$表示余弦注意力，因此基于注意力的蒸馏损失函数平均了师生模型的通道注意力和空间注意力相似性距离：
+$$
+L_{att} = \sum^N_{i=1} \frac{\rho^s_i + \rho^c_i}{2}
+$$
