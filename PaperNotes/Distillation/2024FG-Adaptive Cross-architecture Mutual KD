@@ -1,6 +1,8 @@
 # Adaptive Cross-architecture Mutual Knowledge Distillation
 
+[2024 FG](https://ieeexplore.ieee.org/abstract/document/10581969/)	no code	CIFAR ImageNet	20250109
 
+本文提出一种从Transformer架构向异构架构蒸馏的方法，在logits空间中学习还消除架构差异，引入三种异构的学生模型相互适应交叉学习来缓解蒸馏中的性能差距问题，并提出两阶段蒸馏策略，使表现最低的学生模型从其他学生模型中学习
 
 ## Introduction
 
@@ -40,4 +42,18 @@ $$
 $<·,·>$表示余弦注意力，因此基于注意力的蒸馏损失函数平均了师生模型的通道注意力和空间注意力相似性距离：
 $$
 L_{att} = \sum^N_{i=1} \frac{\rho^s_i + \rho^c_i}{2}
+$$
+
+##### 两阶段蒸馏策略
+
+在第二阶段的蒸馏中，较好的两个学生将尝试帮助最弱的学生提升性能；假设$S_T\ S_C$经过n轮训练后达到了更高的精度，$S_I$则被指定为学生模型，在该阶段只有最弱的学生模型参数得到更新，该阶段损失函数表示为：
+$$
+\begin{aligned}
+L_{ssd} &= L^{S_C \rightarrow S_I} + L^{S_T \rightarrow S_I} \\
+&= \lambda_4L_{CE} + \lambda_5L_{KD}^{S_C \rightarrow S_I} + \lambda_6L_{KD}^{S_T\rightarrow S_I}
+\end{aligned}
+$$
+同样的，依据先前的研究，我们取$\lambda_4 = \lambda_5 = \lambda_6 =1$，总体损失总结为：
+$$
+L = L_{logit} + \alpha L_{att} + \beta L_{ssd}
 $$
