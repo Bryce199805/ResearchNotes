@@ -1,6 +1,6 @@
 # Frequency Attention for Knowledge Distillation
 
-[2024WACV](https://openaccess.thecvf.com/content/WACV2024/html/Pham_Frequency_Attention_for_Knowledge_Distillation_WACV_2024_paper.html)	no code	CIFAR ImageNet	20250215
+[2024WACV](https://openaccess.thecvf.com/content/WACV2024/html/Pham_Frequency_Attention_for_Knowledge_Distillation_WACV_2024_paper.html)	[code in githubn](https://github.com/cuong-pv/FAM-KD)	CIFAR ImageNet	20250215
 
 本文提出了从频率域来捕获详细信息和更高层次信息的FAM模块，频率域的每个频率点都是来自于空间域中的所有像素，可以看作是一种全局注意力，通过FFT转换到频率域后经过全局滤波器进行特征的提取，并通过一个高通滤波器来抑制低频区域的信息来让学生模型更关注显著区域，最后通过IFFT将特征转换为空间域。
 
